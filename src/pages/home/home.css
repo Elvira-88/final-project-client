@@ -1,3 +1,8 @@
-.home {
-    background-image: ;
+/* .home {
+    background-color: blue;
+}; */
+
+.principal-text {
+    display: flex;
+    justify-content: end;
 }

@@ -1,10 +1,12 @@
-import React from 'react'
+import './login.css';
 
 export default function login() {
     return (
-        <div>
+        <div className="login">
             
             <input type="text"/>Usuario
+            <br/>
+            <input type="text"/>Contraseña
             
         </div>
     )
