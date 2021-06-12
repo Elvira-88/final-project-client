@@ -3,10 +3,11 @@ import './login.css';
 export default function login() {
     return (
         <div className="login">
-            
-            <input type="text"/>Usuario
-            <br/>
-            <input type="text"/>Contraseña
+            <label htmlFor="">Usuario</label>
+            <input type="text"/>
+            {/* <br/>           */}
+            <label htmlFor="">Contraseña</label>
+            <input type="text"/>
             
         </div>
     )
