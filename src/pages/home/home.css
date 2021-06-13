@@ -1,8 +1,10 @@
-/* .home {
-    background-color: blue;
-}; */
+.home {
+    background-color: rgb(143, 113, 32);
+    
+    display: flex;
+    
+};
 
 .principal-text {
-    display: flex;
-    justify-content: end;
+    justify-content: center;
 }

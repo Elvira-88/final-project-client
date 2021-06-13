@@ -1,4 +1,6 @@
 .footer {
-    background-color: rgb(160, 120, 9);
-    height: 100px;
+    background: rgb(243, 234, 193);
+    /* height: 10px; */
+    font-family: Cinzel-400;
+    padding: 10px;
 }

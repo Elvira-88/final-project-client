@@ -1,5 +1,8 @@
 .login {
     display: flex;
-    justify-content: center;
+    align-items: center;
     padding: 50px;
+    background: url(loginimage.jpg);
+    background-size: cover;
+    height: 500px;
 }

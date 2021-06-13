@@ -8,7 +8,7 @@ export default function login() {
             {/* <br/>           */}
             <label htmlFor="">Contraseña</label>
             <input type="text"/>
-            
+            <button>Acceder</button>
         </div>
     )
 }

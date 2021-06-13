@@ -1,8 +1,8 @@
-import React from 'react'
+import './courses.css';
 
 export default function courses() {
     return (
-        <div>
+        <div className="courses">
             
             <h5>Curso</h5>
             <p>Texto</p>

@@ -1,8 +1,8 @@
-import React from 'react'
+import './team.css';
 
 export default function team() {
     return (
-        <div>
+        <div className="team">
             <img src="..." alt="Imagen"/>
             <p>texto</p>
             
