@@ -1,10 +1,17 @@
 .home {
     background-color: rgb(143, 113, 32);
-    
     display: flex;
+    justify-content: center;
     
-};
+}
+
+.principal-image {
+    display: flex;
+    align-items: center;
+
+}
 
 .principal-text {
-    justify-content: center;
+    
+
 }

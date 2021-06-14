@@ -1,8 +1,25 @@
 .login {
     display: flex;
-    align-items: center;
-    padding: 50px;
+    
+    flex-direction: column;
+    gap: 20px;
+    padding: 100px;
     background: url(loginimage.jpg);
     background-size: cover;
-    height: 500px;
+  
+}
+
+.logincontent {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+    
+}
+
+.user {
+    display:flex;
+    align-items: center;
+    
+
 }

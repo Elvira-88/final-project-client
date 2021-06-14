@@ -9,11 +9,11 @@ export default function Navbar() {
         <div className="navbar">
             <img className="logo" src={logo} alt="Logo"/>
             <div className="navegation">
-                <NavLink to="/">Inicio</NavLink>
-                <NavLink to="/team">Nuestro equipo</NavLink>
-                <NavLink to="/courses">Cursos</NavLink> 
-                <NavLink to="/login">Accede a tu cuenta</NavLink> 
-                <NavLink to="/register">Regístrate</NavLink> 
+                <NavLink className="navlink" to="/">Inicio</NavLink>
+                <NavLink className="navlink" to="/team">Nuestro equipo</NavLink>
+                <NavLink className="navlink" to="/courses">Cursos</NavLink> 
+                <NavLink className="navlink" to="/login">Accede a tu cuenta</NavLink> 
+                <NavLink className="navlink" to="/register">Regístrate</NavLink> 
             </div>          
                 
         </div>
