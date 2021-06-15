@@ -1,5 +1,8 @@
 .team {
     background-color: rgb(143, 113, 32);
-    height: 400px;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
 
 }

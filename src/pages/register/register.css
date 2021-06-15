@@ -2,7 +2,7 @@
     background-image: url(4.jpeg);
     background-size: cover;
     display: flex;
-    justify-content: center;
+    justify-content: center;    
     padding: 20px; 
        
 }
@@ -10,6 +10,7 @@
 .form {
     display: flex;
     flex-direction: column; 
+    
 }
 
 .inputBlock {

@@ -6,8 +6,6 @@ export default function register() {
 
             <h4>¿Eres un particular?</h4>
 
-            <p>Rellena este formulario</p>
-
             <form action="formParticular" method="get">
 
                 <div class="inputBlock">
@@ -40,8 +38,6 @@ export default function register() {
             </form>
 
             <h4>¿Eres una empresa?</h4>
-
-            <p>Rellena este formulario</p>
 
             <form action="formCompany" method="get">
 
