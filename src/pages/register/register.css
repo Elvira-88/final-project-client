@@ -3,12 +3,16 @@
     background-size: cover;
     display: flex;
     justify-content: center;
- 
-      
+    padding: 20px; 
+       
 }
 
 .form {
     display: flex;
     flex-direction: column; 
-  
+}
+
+.inputBlock {
+    padding: 20px;
+    
 }
