@@ -13,10 +13,16 @@
 
 .navlink {    
     padding: 10px;
-    color: black;
-    text-decoration: none;    
+    color: rgb(46, 43, 43);
+    text-decoration: none;  
+    font-family: Cinzel-400;  
 }
 
 .navlink:hover {
     color: gray;
+}
+
+.logo {
+    width: 300px;
+    padding: 10px;
 }

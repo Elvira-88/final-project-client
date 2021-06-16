@@ -5,9 +5,9 @@ export default function team() {
 
     const teachers = [
         {img:"https://www.blixt.tv/wp-content/uploads/2019/02/fotos-para-cv.-laura-bosh.jpg", name: "Lorena", lastName: "Martínez Crespo", description: "Psicóloga experta en rrhh"},
-        {img:"", name: "Lorena", lastName: "Martínez Crespo", description: "Psicóloga experta en rrhh"},
-        {img:"", name: "Lorena", lastName: "Martínez Crespo", description: "Psicóloga experta en rrhh"},
-        {img:"", name: "Lorena", lastName: "Martínez Crespo", description: "Psicóloga experta en rrhh"},
+        {img:"https://www.blixt.tv/wp-content/uploads/2019/02/fotos-para-cv.-laura-bosh.jpg", name: "Lorena", lastName: "Martínez Crespo", description: "Psicóloga experta en rrhh"},
+        {img:"https://www.blixt.tv/wp-content/uploads/2019/02/fotos-para-cv.-laura-bosh.jpg", name: "Lorena", lastName: "Martínez Crespo", description: "Psicóloga experta en rrhh"},
+        {img:"https://www.blixt.tv/wp-content/uploads/2019/02/fotos-para-cv.-laura-bosh.jpg", name: "Lorena", lastName: "Martínez Crespo", description: "Psicóloga experta en rrhh"},
 
     ];
     
