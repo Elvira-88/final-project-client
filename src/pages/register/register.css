@@ -2,18 +2,35 @@
     background-image: url(4.jpeg);
     background-size: cover;
     display: flex;
-    justify-content: center;    
-    padding: 20px; 
-       
+    flex-direction: column;
+    padding-right: 30%;
+    padding-left: 30%;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    align-items: center;         
 }
 
-.form {
-    display: flex;
-    flex-direction: row; 
-    
+.formLabel {
+    padding-bottom: 10px;
 }
+
+.inputStyle {
+    height: 30px;
+    width: 200px;
+    border-radius: 8px;
+    border-color: #868686;
+    background-color: #efefef;
+    border-style: double;
+    border-width: 1px;
+}
+
 
 .inputBlock {
-    padding: 20px;
+    padding: 10px;     
+}
+
+.registerbutton {
+    font-family: Cinzel-400;
+    padding-top: 30px;
     
 }

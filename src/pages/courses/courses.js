@@ -3,20 +3,20 @@ import './courses.css';
 
 export default function courses() {
 
-    const teachers = [
-        {name: "Gestión del talento", description: "Enfocado para directivos y personal de rrhh", duration: "20h"},
-        {name: "Gestión del talento", description: "Enfocado para directivos y personal de rrhh", duration: "20h"},
-        {name: "Gestión del talento", description: "Enfocado para directivos y personal de rrhh", duration: "20h"},
-        {name: "Gestión del talento", description: "Enfocado para directivos y personal de rrhh", duration: "20h"},
+    const courses = [
+        {name: "Gestión del talento", description: "Enfocado para directivos y personal de rrhh", teacher: "Lorena Martínez Crespo", duration: "20h"},
+        {name: "Gestión del talento", description: "Enfocado para directivos y personal de rrhh", teacher: "Lorena Martínez Crespo", duration: "20h"},
+        {name: "Gestión del talento", description: "Enfocado para directivos y personal de rrhh", teacher: "Lorena Martínez Crespo", duration: "20h"},
+        {name: "Gestión del talento", description: "Enfocado para directivos y personal de rrhh", teacher: "Lorena Martínez Crespo", duration: "20h"},
 
     ];
 
     return (
         <div className="courses">
             
-            {teachers.map(course => {
+            {courses.map(course => {
                 return (
-                    <CourseCard name = {course.name} description = {course.description} duration = {course.duration}/> 
+                    <CourseCard name = {course.name} description = {course.description} teacher = {course.teacher} duration = {course.duration}/> 
                 )
             })}
           

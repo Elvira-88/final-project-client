@@ -2,85 +2,61 @@ import './register.css';
 
 export default function register() {
     return (
-        <div className="register">
+        <div className="register">   
 
-            <div className="form">
+            <div>
+                <h2>Registro</h2> 
+            </div>                                 
 
-                <h4>¿Eres un particular?</h4>
+            <div className="inputBlock">
+                <div className="formLabel">
+                    <label for="nameInput">Nombre</label>
+                </div>
 
-                <form action="form" method="get">
-
-                    <div class="inputBlock">
-                        <label for="nameInput">Nombre</label>
-                        <input type="text" id="nameInput" name="userName" placeholder="Introduce tu nombre"/>
-                    </div>
-
-                    <div class="inputBlock">
-                        <label for="lastnameInput">Apellidos</label>
-                        <input type="text" id="lastnameInput" name="lastName" placeholder="Introduce tus apellidos"/>
-                    </div>
-
-                    <div class="inputBlock">
-                        <label for="emailInput">Email:</label>
-                        <input required type="email" id="emailInput" required name="userEmail" placeholder="Introduce tu email"/>
-                    </div>
-
-                    <div class="inputBlock">
-                        <label for="telephoneInput">Teléfono:</label>
-                        <input required type="telephone" id="telephoneInput" name="telephpneInput" placeholder="Introduce tu teléfono"/>
-                    </div>
-
-                    <div class="inputBlock">
-                        <label for="passwordInput">Contraseña</label>
-                        <input type="password" id="passwordInput" required name="passwrodInput" placeholder="**************"/>
-                    </div>                            
-
-                    <button>Crear cuenta</button>
-                        
-                </form>
-
+                <input className="inputStyle" type="text" id="nameInput" name="userName" placeholder=" Elvira"/>
             </div>
 
-            <div className="form">
+            <div className="inputBlock">
 
-                <h4>¿Eres una empresa?</h4>
-
-                <form action="form" method="get">
-
-                    <div class="inputBlock">
-                        <label for="nameInput">Nombre de la empresa</label>
-                        <input type="text" id="nameInput" name="userName" placeholder="Introduce el nombre de tu nombre"/>
-                    </div>
-
-                    <div class="inputBlock">
-                        <label for="cifINput">CIF</label>
-                        <input type="text" id="cifINput" name="cif" placeholder="Introduce el CIF de tu empresa"/>
-                    </div>
-
-                    <div class="inputBlock">
-                        <label for="emailInput">Email:</label>
-                        <input required type="email" id="emailInput" required name="userEmail" placeholder="Introduce tu email"/>
-                    </div>
-
-                    <div class="inputBlock">
-                        <label for="telephoneInput">Teléfono:</label>
-                        <input required type="telephone" id="telephoneInput" name="telephpneInput" placeholder="Introduce tu teléfono"/>
-                    </div>
-
-                    <div class="inputBlock">
-                        <label for="passwordInput">Contraseña</label>
-                        <input type="password" id="passwordInput" required name="passwrodInput" placeholder="**************"/>
-                    </div>                            
-
-                    <button>Crear cuenta</button>
-                        
-                </form>
+                <div className="formLabel">
+                    <label for="lastnameInput">Apellidos</label>
+                </div>
                 
+                <input className="inputStyle" type="text" id="lastnameInput" name="lastName" placeholder=" Pérez Torres"/>
+            </div>
+
+            <div className="inputBlock">
+                <div className="formLabel">
+                    <label for="emailInput">Email:</label>
+                </div>
+                
+                <input className="inputStyle" required type="email" id="emailInput" required name="userEmail" placeholder=" elvipt88@gmail.com"/>
+            </div>
+
+            <div className="inputBlock">
+                <div className="formLabel">
+                    <label for="telephoneInput">Teléfono:</label>
+                </div>
+                
+                <input className="inputStyle" required type="telephone" id="telephoneInput" name="telephpneInput" placeholder=" 638724481"/>
+            </div>
+
+            <div className="inputBlock">
+                <div className="formLabel">
+                    <label for="passwordInput">Contraseña</label>
+                </div>
+                
+                <input className="inputStyle" type="password" id="passwordInput" required name="passwrodInput" placeholder=" *************"/>
+            </div>     
+
+            <div className="registerbutton">
+                <button >Crear cuenta</button>
             </div>   
-      
+       
+                
+        </div>            
                     
-        </div>
-    )
+     )
 }
 
 

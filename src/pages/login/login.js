@@ -3,14 +3,15 @@ import './login.css';
 export default function login() {
     return (
         <div className="login">
-            <h1>Bienvenido</h1>
+            <h2>Inicia sesión</h2>
             <div className="loginContent">
-                <input type="text" placeholder="Usuario"/>
+                <input className="inputStyle" type="text" placeholder=" Usuario"/>
             </div>
             <div className="loginContent">        
-                <input type="password" placeholder="Contraseña"/>
+                <input className="inputStyle" type="password" placeholder=" Contraseña"/>
             </div>
-            <a href="#">¿Olvidaste tu contraseña?</a>
+            <a className="accessProblems" href="#">¿Olvidaste tu contraseña?</a>
+            <a className="accessProblems" href="#">No estoy registrado</a>
             <div className="loginButton">
                 <button>Acceder</button>                
             </div>            

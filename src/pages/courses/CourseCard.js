@@ -5,6 +5,7 @@ export default function CourseCard(props) {
         <div>
             <h4>{props.name}</h4>
             <h4>{props.description}</h4>
+            <h5>{props.teacher}</h5>
             <p>{props.duration}</p>
         </div>
     )
