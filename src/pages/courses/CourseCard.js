@@ -7,6 +7,7 @@ export default function CourseCard(props) {
             <h4>{props.description}</h4>
             <h5>{props.teacher}</h5>
             <p>{props.duration}</p>
+            <button>Contratar</button>
         </div>
     )
 }

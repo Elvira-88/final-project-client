@@ -6,6 +6,7 @@ export default function Footer() {
             <h3>Contacto</h3>
             <p>formatio@gmail.com</p>
             <p>629845536</p>
+            
         </div>
     )
 }
