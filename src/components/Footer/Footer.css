@@ -1,5 +1,22 @@
 .footer {
     background: rgb(243, 234, 193);
-    font-family: Cinzel-400;
     padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
 }
+
+.contact {
+    
+}
+
+.icons {
+    /* padding: 5px;
+    gap: 5px; */ 
+}
+
+/* .icon {
+    height: 20px;
+
+} */

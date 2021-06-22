@@ -4,7 +4,7 @@ import './home.css';
 
 export default function home() {
     return (
-        <>
+        
         <div className="home">
             <div className="textUp">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error magnam quisquam deserunt, vero laborum, non maxime consectetur alias aliquam numquam nemo! Qui fugiat non totam rerum tenetur, cum voluptates cupiditate est fuga officia nemo natus id porro exercitationem rem quod ea ipsam accusantium quo sequi eligendi asperiores? Ut, expedita quam!</p>
@@ -27,6 +27,6 @@ export default function home() {
             </div>    
             
         </div>
-        </>
+        
     )
 }
