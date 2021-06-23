@@ -11,6 +11,7 @@ export default function CourseCard(props) {
                 ? <span>Cursando</span>
                 : <button>Contratar</button>
             }
+            <p>{props.price}</p>
         </div>
     )
 }

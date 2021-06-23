@@ -1,27 +1,12 @@
 .home {
     background-color: rgb(143, 113, 32);
-    /* display: flex; */
-    /* justify-content: center; */
-    
 }
 
 .homeCenter {
     display: flex;
 }
 
-.principalImg {
-    /* display: flex;
-    align-items: center; */
-}
-
-.textUp {
-    /* justify-content: initial; */
-}
-
-.textLeft {
-    /* justify-content: left; */
-}
-
-.textRight {
-    /* justify-content: right; */
+.paragraph {
+    margin-top: 0px;
+    margin-bottom: 0px;
 }

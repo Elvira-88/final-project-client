@@ -24,3 +24,7 @@ code {
   border-style: double;
   border-width: 1px;
 }
+
+.formLabel {
+  padding-bottom: 10px;
+}

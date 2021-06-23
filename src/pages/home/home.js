@@ -7,7 +7,7 @@ export default function home() {
         
         <div className="home">
             <div className="textUp">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error magnam quisquam deserunt, vero laborum, non maxime consectetur alias aliquam numquam nemo! Qui fugiat non totam rerum tenetur, cum voluptates cupiditate est fuga officia nemo natus id porro exercitationem rem quod ea ipsam accusantium quo sequi eligendi asperiores? Ut, expedita quam!</p>
+                <p className="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error magnam quisquam deserunt, vero laborum, non maxime consectetur alias aliquam numquam nemo! Qui fugiat non totam rerum tenetur, cum voluptates cupiditate est fuga officia nemo natus id porro exercitationem rem quod ea ipsam accusantium quo sequi eligendi asperiores? Ut, expedita quam!</p>
             </div>
             <div className="homeCenter">
                 <div className="textLeft">
@@ -23,7 +23,7 @@ export default function home() {
                 </div>  
             </div>            
             <div className="textDown">
-                <p>Texto abajo</p>
+                <p className="paragraph">Texto abajo</p>
             </div>    
             
         </div>

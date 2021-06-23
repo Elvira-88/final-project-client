@@ -11,9 +11,9 @@ export default function Navbar() {
             <div className="navegation">
                 <NavLink className="navlink" to="/">Inicio</NavLink>
                 <NavLink className="navlink" to="/team">Nuestro equipo</NavLink>
-                <NavLink className="navlink" to="/courses">Cursos</NavLink> 
-                <NavLink className="navlink" to="/login">Accede a tu cuenta</NavLink> 
+                <NavLink className="navlink" to="/courses">Cursos</NavLink>               
                 <NavLink className="navlink" to="/register">Regístrate</NavLink> 
+                <NavLink className="navlink" to="/login">Iniciar sesión</NavLink> 
             </div>          
                 
         </div>

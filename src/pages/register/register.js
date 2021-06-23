@@ -27,6 +27,14 @@ export default function register() {
 
             <div className="inputBlock">
                 <div className="formLabel">
+                    <label for="dniInput">DNI:</label>
+                </div>
+                
+                <input className="inputStyle" required type="dni" id="dniInput" required name="dniInput" placeholder=" 45326100-T"/>
+            </div>
+
+            <div className="inputBlock">
+                <div className="formLabel">
                     <label for="emailInput">Email:</label>
                 </div>
                 
@@ -35,19 +43,29 @@ export default function register() {
 
             <div className="inputBlock">
                 <div className="formLabel">
+                    <label for="passwordInput">Contraseña</label>
+                </div>
+                
+                <input className="inputStyle" type="password" id="passwordInput" required name="passwrodInput" placeholder=" *************"/>
+            </div>    
+
+            
+            <div className="inputBlock">
+                <div className="formLabel">
                     <label for="telephoneInput">Teléfono:</label>
                 </div>
                 
                 <input className="inputStyle" required type="telephone" id="telephoneInput" name="telephpneInput" placeholder=" 638724481"/>
             </div>
 
+            
             <div className="inputBlock">
                 <div className="formLabel">
-                    <label for="passwordInput">Contraseña</label>
+                    <label for="addressInput">Dirección:</label>
                 </div>
                 
-                <input className="inputStyle" type="password" id="passwordInput" required name="passwrodInput" placeholder=" *************"/>
-            </div>     
+                <input className="inputStyle" required type="address" id="addressInput" name="addressInput" placeholder=" Calle Luchana nº 7 3ºA Málaga"/>
+            </div> 
 
             <div className="registerbutton">
                 <button >Crear cuenta</button>
