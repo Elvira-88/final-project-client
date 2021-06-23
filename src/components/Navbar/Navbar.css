@@ -1,7 +1,7 @@
 .navbar {
     padding: 10px;    
     display: flex;
-    background-color: rgb(243, 234, 193);
+    background-color: rgb(243, 228, 210);
     justify-content: space-between;
     align-items: center;
     
@@ -13,9 +13,8 @@
 
 .navlink {    
     padding: 10px;
-    color: rgb(46, 43, 43);
-    text-decoration: none;  
-    font-family: Cinzel-400;  
+    text-decoration: none;      
+    color: rgb(56, 53, 53);
 }
 
 .navlink:hover {

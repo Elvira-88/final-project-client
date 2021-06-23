@@ -1,12 +1,24 @@
 .home {
-    background-color: rgb(143, 113, 32);
+    background-color: rgb(170, 142, 65);
+    padding: 30px;
 }
 
 .homeCenter {
     display: flex;
+    justify-content: center;
 }
 
 .paragraph {
     margin-top: 0px;
     margin-bottom: 0px;
+}
+
+.principalImg {
+    margin-top: 30px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.textLeft, .textRight {
+    padding: 10px;
 }
