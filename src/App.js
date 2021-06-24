@@ -8,7 +8,7 @@ import login from "./pages/login/login";
 import register from "./pages/register/register";
 import courses from "./pages/courses/courses";
 import team from "./pages/team/team";
-// import company from "./pages/company";
+import hireCourse from "./pages/hire-course/hireCourse";
 
 function App() {
   return (
@@ -22,8 +22,8 @@ function App() {
           <Route path="/login" component={login}/>
           <Route path="/register" component={register}/>
           <Route path="/courses" component={courses}/>
-          <Route path="/team" component={team}/>
-          
+          <Route path="/team" component={team}/>  
+          <Route path="/hire-course" component={hireCourse}/>         
         </Switch>
 
       </BrowserRouter>
