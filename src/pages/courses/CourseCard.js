@@ -1,21 +1,25 @@
-import React from 'react'
+import {useHistory} from "react-router-dom";
 
-export default function CourseCard(props) {
-    function pay() {
-        var coursePay = props.id
+export default function CourseCard({course}) {
+ 
+    const history = useHistory();
+
+    function handleClick() {
+        history.push(`/hire-course/${course.id}`);
     }
 
     return (
         <div>
-            <h4>{props.name}</h4>
-            <h4>{props.description}</h4>
-            <h5>{props.teacher}</h5>
-            <p>{props.duration}</p>
-            {props.cursando
+            <h4>{course.name}</h4>
+            <h4>{course.description}</h4>
+            <h5>{course.teacher}</h5>
+            <p>{course.duration}</p>
+            {course.cursando
                 ? <span>Cursando</span>
-                : <a href="/hire-course" onClick={pay}>Contratar</a>
+                // : <a href="/hire-course" onClick={pay}>Contratar</a>
+                : <button onClick={handleClick}>Contratar {course.id}</button>
             }
-            <p>{props.price}</p>
+            <p>{course.price}</p>
         </div>
     )
 }
