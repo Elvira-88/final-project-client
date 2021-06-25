@@ -24,8 +24,10 @@ export default function Home() {
                     <img src="https://srvsbniisphp-universitatpolit.netdna-ssl.com/cdn_propintegral/sites/default/files/styles/ancho680px/public/noticia/66106/field_foto/gettyimages-1181607218.jpg" alt="Foto"/>
                 </div>
                 <div className="textRight">
-                    <p>¿Quieres mejorar el rendimiento de tu empresa?</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed adipisci voluptatibus, quos dolorum natus alias porro nostrum soluta eligendi nisi laudantium? Unde molestias laborum totam nam, cupiditate et illo enim necessitatibus, autem iure quia aut dicta quod non architecto fuga facilis cumque maiores voluptates? Voluptate dolorum quae nam rem quo.</p>
+                    <h3>¿Por qué elegir Formatio?</h3>
+                    <p>Aprenderás a responder preguntas que nunca nadie antes se había planteado. Además de competencias trabajamos tu Creatividad, tu Pensamiento Crítico, tu Capacidad para resolver Problemas y la Colaboración.</p>
+                    <p>El centro de nuestra metodología gira alrededor del alumno, con el objetivo de ofrecerle una experiencia única de aprendizaje, adaptada a sus necesidades. Cuéntanos tu caso, nosotros nos encargaremos de analizarlo y plantearemos el desarrollo del aprendizaje en función de lo que más te convenga.</p>
+                    <p>Formamos en las competencias y habilidades más innovadoras.</p>
                 </div>  
             </div>            
             <div className="textDown">
