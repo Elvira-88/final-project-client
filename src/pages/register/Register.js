@@ -1,6 +1,6 @@
 import './register.css';
 
-export default function register() {
+export default function Register() {
     return (
         <div className="register">   
 

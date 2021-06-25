@@ -2,12 +2,13 @@ import React from 'react';
 
 import './home.css';
 
-export default function home() {
+export default function Home() {
     return (
         
         <div className="home">
             <div className="textUp">
-                <p className="paragraph">Formatio es una escuela de negocios que apuesta por un modelo de aprendizaje moderno, flexible y adaptativo capaz de responder a las necesidades reales de las empresas y los profesionales que vivimos en una sociedad actual sometida a continuas transformaciones y constantes cambios. Nuestro objetivo es formar los nuevos líderes que demanda el mundo en el que vivimos; capaces de emprender, innovar y crear valor a sus compañías, sus empleados y a la sociedad de forma sostenible y rentable. </p>
+                <p className="paragraph">Formatio es una escuela de negocios que apuesta por un modelo de aprendizaje moderno, flexible y adaptativo capaz de responder a las necesidades reales de las empresas y los profesionales que vivimos en una sociedad actual sometida a continuas transformaciones y constantes cambios. Nuestro objetivo es formar los nuevos líderes que demanda el mundo en el que vivimos; capaces de emprender, innovar y crear valor a sus compañías, sus empleados y a la sociedad de forma sostenible y rentable.</p>
+                <h4 className="confucio">“Me lo contaron y lo olvidé; lo ví y lo entendí; lo hice y lo aprendí“ (Confucio)</h4>
             </div>
             <div className="homeCenter">
                 <div className="textLeft">

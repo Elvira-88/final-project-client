@@ -16,8 +16,7 @@ export default function CourseCard({course}) {
             <p>{course.duration}</p>
             {course.cursando
                 ? <span>Cursando</span>
-                // : <a href="/hire-course" onClick={pay}>Contratar</a>
-                : <button onClick={handleClick}>Contratar {course.id}</button>
+                : <button onClick={handleClick}>Contratar</button>
             }
             <p>{course.price}</p>
         </div>

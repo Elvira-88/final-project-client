@@ -4,7 +4,7 @@ import {useState, useEffect} from "react";
 import CourseCard from './CourseCard';
 import './courses.css';
 
-export default function courses() {
+export default function Courses() {
 
     
     // const actualCourses = [
@@ -40,7 +40,7 @@ export default function courses() {
             })}     */}
             {courses.map(course => {
                 return (
-                    <CourseCard courses = {courses} setCourses = {setCourses}/> 
+                    <CourseCard course={course} /> 
                 )
             })}
           

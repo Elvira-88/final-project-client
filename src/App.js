@@ -3,12 +3,12 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 
-import home from "./pages/home/home";
-import login from "./pages/login/login";
-import register from "./pages/register/register";
-import courses from "./pages/courses/courses";
-import team from "./pages/team/team";
-import hireCourse from "./pages/hire-course/hireCourse";
+import Home from "./pages/home/Home";
+import Login from "./pages/login/Login";
+import Register from "./pages/register/Register";
+import Courses from "./pages/courses/Courses";
+import Team from "./pages/team/Team";
+import HireCourse from "./pages/hire-course/HireCourse";
 
 function App() {
   return (
@@ -18,12 +18,12 @@ function App() {
         <Navbar/>
 
         <Switch>
-          <Route exact path="/" component={home}/>
-          <Route path="/login" component={login}/>
-          <Route path="/register" component={register}/>
-          <Route path="/courses" component={courses}/>
-          <Route path="/team" component={team}/>  
-          <Route path="/hire-course" component={hireCourse}/>         
+          <Route exact path="/" component={Home}/>
+          <Route path="/login" component={Login}/>
+          <Route path="/register" component={Register}/>
+          <Route path="/courses" component={Courses}/>
+          <Route path="/team" component={Team}/>  
+          <Route path="/hire-course" component={HireCourse}/>         
         </Switch>
 
       </BrowserRouter>

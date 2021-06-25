@@ -1,7 +1,7 @@
 import TeamCard from './TeamCard';
 import './team.css';
 
-export default function team() {
+export default function Team() {
 
     const teachers = [
         {img:"https://www.blixt.tv/wp-content/uploads/2019/02/fotos-para-cv.-laura-bosh.jpg", name: "Lorena", lastName: "Martínez Crespo", description: "Psicóloga experta en rrhh"},
