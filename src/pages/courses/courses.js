@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react";
-import {useParams} from "react-router-dom";
+// import {useParams} from "react-router-dom";
 
 import CourseCard from './CourseCard';
 import './courses.css';
@@ -40,7 +40,7 @@ export default function courses() {
             })}     */}
             {courses.map(course => {
                 return (
-                    <CourseCard course = {course}/> 
+                    <CourseCard courses = {courses} setCourses = {setCourses}/> 
                 )
             })}
           
