@@ -12,7 +12,7 @@ export default function CourseCard({course}) {
         <div>
             <h4>{course.name}</h4>
             <h4>{course.description}</h4>
-            <h5>{course.teacher}</h5>
+            <h5>{course?.teacher?.name}</h5>
             <p>{course.duration}</p>
             {course.cursando
                 ? <span>Cursando</span>

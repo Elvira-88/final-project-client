@@ -12,6 +12,8 @@ export default function HireCourse() {
     // const {course} = useParams();
 
     // const COURSES_URL = "https://api/formatio/courses/";
+
+    // http://localhost:8000/api/courses
     
     useEffect(() => {
         // fetch(`${COURSES_URL}${course}`)

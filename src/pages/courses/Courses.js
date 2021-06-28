@@ -6,20 +6,33 @@ import './courses.css';
 
 export default function Courses() {
 
+    const [courses, setCourses] = useState([]);
+
+    // const {course} = useParams();
+
+    const COURSES_URL = "http://localhost:8000/api/courses";
+
+    useEffect(() => {
+        fetch(COURSES_URL)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            setCourses(data);
+        })
+    }, [])
+
     
     // const actualCourses = [
     //     {id:1, name: "Programación", description: "Enfocado para directivos y personal de rrhh", teacher: "Lorena Martínez Crespo", duration: "20h"},
     // ];
-    const initialCourseState = [
-        {id:2, name: "Gestión del talento", description: "Enfocado para directivos y personal de rrhh", teacher: "Lorena Martínez Crespo", duration: "20", price: "750€", cursando: "true"},
-        {id:3, name: "Gestión del talento", description: "Enfocado para directivos y personal de rrhh", teacher: "Lorena Martínez Crespo", duration: "20", price: "750€"},
-        {id:4, name: "Gestión del talento", description: "Enfocado para directivos y personal de rrhh", teacher: "Lorena Martínez Crespo", duration: "20", price: "750€"},
-        {id:5, name: "Gestión del talento", description: "Enfocado para directivos y personal de rrhh", teacher: "Lorena Martínez Crespo", duration: "20", price: "750€"},
-    ];
+    // const initialCourseState = [
+    //     {id:2, name: "Gestión del talento", description: "Enfocado para directivos y personal de rrhh", teacher: "Lorena Martínez Crespo", duration: "20", price: "750€", cursando: "true"},
+    //     {id:3, name: "Gestión del talento", description: "Enfocado para directivos y personal de rrhh", teacher: "Lorena Martínez Crespo", duration: "20", price: "750€"},
+    //     {id:4, name: "Gestión del talento", description: "Enfocado para directivos y personal de rrhh", teacher: "Lorena Martínez Crespo", duration: "20", price: "750€"},
+    //     {id:5, name: "Gestión del talento", description: "Enfocado para directivos y personal de rrhh", teacher: "Lorena Martínez Crespo", duration: "20", price: "750€"},
+    // ];
 
-    const [courses, setCourses] = useState(initialCourseState);
-
-    // const {user} = useParams();
+    // const [courses, setCourses] = useState(initialCourseState);
 
     useEffect(() => {
       // TODO: fetch
