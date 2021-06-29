@@ -23,7 +23,7 @@ function App() {
           <Route path="/register" component={Register}/>
           <Route path="/courses" component={Courses}/>
           <Route path="/team" component={Team}/>  
-          <Route path="/hire-course" component={HireCourse}/>         
+          <Route path="/hire-course/:id" component={HireCourse}/>         
         </Switch>
 
       </BrowserRouter>

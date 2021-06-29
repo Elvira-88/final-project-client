@@ -10,15 +10,17 @@ export default function CourseCard({course}) {
 
     return (
         <div>
-            <h4>{course.name}</h4>
+            <h3>{course.name}</h3>
             <h4>{course.description}</h4>
             <h5>{course?.teacher?.name}</h5>
-            <p>{course.duration}</p>
+            <h5>{course?.teacher?.lastName}</h5>
+            <p>{course.duration} horas</p>
+            <p>{course.price} euros</p>
             {course.cursando
                 ? <span>Cursando</span>
                 : <button onClick={handleClick}>Contratar</button>
             }
-            <p>{course.price}</p>
+            
         </div>
     )
 }

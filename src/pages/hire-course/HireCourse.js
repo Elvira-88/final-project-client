@@ -3,33 +3,29 @@ import {useParams} from "react-router-dom";
 
 export default function HireCourse() {
     
-    //TODO: creamos un estado con la info del curso
-    //TODO: obtener parametro id
-    //TODO: hacer una peticion para obtener la info del curso de ese ID y actualizamos el estado
+    const [hireCourse, setHireCourse] = useState({});
 
-    const [CourseData, setCourseData] = useState({});
+    const {id} = useParams();
 
-    // const {course} = useParams();
-
-    // const COURSES_URL = "https://api/formatio/courses/";
-
-    // http://localhost:8000/api/courses
+    const COURSES_URL = "http://localhost:8000/api/courses/";    
     
     useEffect(() => {
-        // fetch(`${COURSES_URL}${course}`)
-        // .then(response => response.json())
-        // .then(data => setCourseData(data))
-        const data = {id:5, name: "Gestión del talento", description: "Enfocado para directivos y personal de rrhh", teacher: "Lorena Martínez Crespo", duration: "20", price: "750€"};
-        setCourseData(data)
-    }, [])
+        fetch(`${COURSES_URL}${id}`)
+        .then(response => response.json())
+        .then(data => {
+            // console.log(data); 
+            setHireCourse(data);
+        }) 
+          
+    }, [id])
 
 
     return (
         <div>
             {/* TODO: Imprimimos nuestro estado con la info del curso */}
-            <h3>Nombre del curso: {CourseData.name}</h3>
-            <h3>Duración: {CourseData.duration}</h3>
-            <h1>Total a pagar: {CourseData.price}</h1>
+            <h3>Nombre del curso: {hireCourse.name}</h3>
+            <h3>Duración: {hireCourse.duration} horas</h3>
+            <h1>Total a pagar: {hireCourse.price} €</h1>
             <div>   
                 <h4>Método de pago</h4>        
                 <div>
