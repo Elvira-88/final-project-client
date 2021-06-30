@@ -25,9 +25,10 @@ export default function Home() {
                 </div>
                 <div className="textRight">
                     <h3>¿Por qué elegir Formatio?</h3>
-                    <p>Aprenderás a responder preguntas que nunca nadie antes se había planteado. Además de competencias trabajamos tu Creatividad, tu Pensamiento Crítico, tu Capacidad para resolver Problemas y la Colaboración.</p>
-                    <p>El centro de nuestra metodología gira alrededor del alumno, con el objetivo de ofrecerle una experiencia única de aprendizaje, adaptada a sus necesidades. Cuéntanos tu caso, nosotros nos encargaremos de analizarlo y plantearemos el desarrollo del aprendizaje en función de lo que más te convenga.</p>
-                    <p>Formamos en las competencias y habilidades más innovadoras.</p>
+                    <p>Para aprender algo no basta con leerlo o que nos lo expliquen, tenemos que hacerlo. Porque aprender es un proceso donde acumulamos experiencia a partir de la práctica que luego podremos reutilizar en el futuro. </p>
+                    <p>Aprenderás a responder preguntas que nunca nadie antes se había planteado. Además de competencias trabajamos tu Creatividad, tu Pensamiento Crítico, tu Capacidad para resolver Problemas y la Colaboración. Te formamos en las competencias y habilidades más innovadoras.</p>
+                    <h4 className="learning">“El alumno está en el centro del aprendizaje”</h4>
+                    <p>Nuestra metodología gira alrededor del alumno, con el objetivo de ofrecerle una experiencia única de aprendizaje, adaptada a sus necesidades. Cuéntanos tu caso, nosotros nos encargaremos de analizarlo y plantearemos el desarrollo del aprendizaje en función de lo que más te convenga.</p>
                 </div>  
             </div>            
             <div className="textDown">

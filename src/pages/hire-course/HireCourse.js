@@ -13,7 +13,6 @@ export default function HireCourse() {
         fetch(`${COURSES_URL}${id}`)
         .then(response => response.json())
         .then(data => {
-            // console.log(data); 
             setHireCourse(data);
         }) 
           
@@ -22,7 +21,6 @@ export default function HireCourse() {
 
     return (
         <div>
-            {/* TODO: Imprimimos nuestro estado con la info del curso */}
             <h3>Nombre del curso: {hireCourse.name}</h3>
             <h3>Duración: {hireCourse.duration} horas</h3>
             <h1>Total a pagar: {hireCourse.price} €</h1>
@@ -39,7 +37,8 @@ export default function HireCourse() {
                 <div>
                     <input type="radio" name="paymentMethod" id="bizumInput" required></input>
                     <label for="bizumInput">Bizum</label>
-                </div>              
+                </div>   
+                <button>Pagar</button>           
             </div>  
         </div>
     )
