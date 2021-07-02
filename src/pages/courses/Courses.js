@@ -15,8 +15,6 @@ export default function Courses() {
     //     .then(data=>setUsersCourses(data))
     // }, [])
 
-    // http://localhost:8000/api/users/courses  (La url que me devuelve las matrículas de los cursos de x usuario)
-
     const [courses, setCourses] = useState([]);
 
     const COURSES_URL = "http://localhost:8000/api/courses";

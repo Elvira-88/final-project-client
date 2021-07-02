@@ -2,14 +2,7 @@ import './login.css';
 
 export default function Login() {
 
-       //const LOGIN_URL = "https://api/formatio/login/";
-       //https://api/formatio/login/f=narbelys@gmail.com,p=1234
-       //data={user:"narbelys", pass=1234}
-       //https://api/formatio/login/URL 
-       //login por post o get??
-       //1.  Login por post o get
-       //2. si dice post, hacer ejemplo api post 
-       //3. hacer api get, curso por id, como el hire-course
+     
 
 
     return (
