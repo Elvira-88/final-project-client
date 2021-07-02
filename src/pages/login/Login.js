@@ -1,9 +1,22 @@
+import {useHistory} from "react-router-dom";
+import { useAuthContext } from "../../context/AuthContext";
+
 import './login.css';
+
 
 export default function Login() {
 
-     
+    // const history = useHistory();
+    // const { isAuthenticated, setIsAuthenticated } = useAuthContext();
 
+    // const LOGIN_URL = "";
+
+    // function login() {
+    //     fetch(LOGIN_URL)
+    //     .then(response => response.json())
+    //     .then()
+    //     setIsAuthenticated(true)
+    //     history.push(`/courses/`);
 
     return (
         <div className="login">

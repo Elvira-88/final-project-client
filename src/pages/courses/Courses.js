@@ -1,10 +1,13 @@
 import {useState, useEffect} from "react";
+import { useAuthContext } from "../../context/AuthContext";
 
 import CourseCard from './CourseCard';
 import './courses.css';
 
 export default function Courses() {
 
+    // const { isAuthenticated, setIsAuthenticated } = useAuthContext();
+ 
     // const [usersCourses, setUsersCourses] = useState([]);
 
     // const USERSCOURSES_URL = "http://localhost:8000/api/users/courses";

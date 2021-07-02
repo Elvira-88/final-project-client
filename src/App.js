@@ -1,4 +1,5 @@
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import AuthContext from "./context/AuthContext";
 
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
@@ -13,21 +14,19 @@ import HireCourse from "./pages/hire-course/HireCourse";
 function App() {
   return (
     <div className="App">
-    
-      <BrowserRouter>
-        <Navbar/>
-
-        <Switch>
-          <Route exact path="/" component={Home}/>
-          <Route path="/login" component={Login}/>
-          <Route path="/register" component={Register}/>
-          <Route path="/courses" component={Courses}/>
-          <Route path="/team" component={Team}/>  
-          <Route path="/hire-course/:id" component={HireCourse}/>         
-        </Switch>
-
-      </BrowserRouter>
-
+      <AuthContext>
+          <BrowserRouter>
+            <Navbar/>
+            <Switch>
+              <Route exact path="/" component={Home}/>
+              <Route path="/login" component={Login}/>
+              <Route path="/register" component={Register}/>
+              <Route path="/courses" component={Courses}/>
+              <Route path="/team" component={Team}/>  
+              <Route path="/hire-course/:id" component={HireCourse}/>         
+            </Switch>
+          </BrowserRouter>
+      </AuthContext>
       <Footer/>
  
     </div>
