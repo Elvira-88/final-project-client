@@ -1,6 +1,35 @@
+import { LOGIN_URL } from "../../config/config";
+import { useForm } from "../../hooks/useForm";
+import { Redirect, useHistory} from "react-router-dom";
+import { useAuthContext } from "../../context/AuthContext";
 import './register.css';
 
 export default function Register() {
+
+    const [form, handleChange] = useForm({email: "admin@codespace.com", password: "root"})
+    const {signIn, isAuthenticated} = useAuthContext();
+    const history = useHistory();
+
+    const handleSubmit = async e => {
+        e.preventDefault();
+        
+        const options = {
+            method: "POST",
+            headers: {"Content-type": "application/json"},
+            body: JSON.stringify(form)
+        }
+
+        const response = await fetch(LOGIN_URL, options);
+        const data = await response.json();
+        
+        if(response.status >= 200 && response.status < 300) {
+            signIn(data.token, data.user);
+            history.push("/courses")
+        } else {
+            alert("Login incorrecto");
+        }
+    };
+
     return (
         <div className="register">  
 
