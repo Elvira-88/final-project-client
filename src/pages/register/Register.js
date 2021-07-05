@@ -6,7 +6,8 @@ import './register.css';
 
 export default function Register() {
 
-    const [form, handleChange] = useForm({email: "admin@codespace.com", password: "root"})
+    const formInitialState = { name: "", lastName: "", dni: "", email: "", password: "", phone: "", addres: ""};
+    const [form, handleChange] = useForm(formInitialState)
     const {signIn, isAuthenticated} = useAuthContext();
     const history = useHistory();
 

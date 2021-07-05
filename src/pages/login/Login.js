@@ -7,7 +7,8 @@ import './login.css';
 
 export default function Login() {
 
-    const [form, handleChange] = useForm({email: "", password: ""})
+    const formInitialState = "";
+    const [form, handleChange] = useForm(formInitialState);
     const {signIn, isAuthenticated} = useAuthContext();
     const history = useHistory();
 
@@ -53,7 +54,7 @@ export default function Login() {
                 <div className="formLabel">
                     <label>Usuario</label>
                 </div>
-                <input onChange={handleChange} value={form.email} name="email" className="inputStyle" type="email" placeholder=" Email"/>               
+                <input onChange={handleChange} value={form.username} name="username" className="inputStyle" type="email" placeholder=" Email"/>               
             </div>
             <div className="loginContent">
                 <div className="formLabel">  
