@@ -1,4 +1,4 @@
-import { LOGIN_URL } from "../../config/config";
+import { REGISTER_URL } from "../../config/config";
 import { useForm } from "../../hooks/useForm";
 import { Redirect, useHistory} from "react-router-dom";
 import { useAuthContext } from "../../context/AuthContext";
@@ -8,7 +8,7 @@ export default function Register() {
 
     const formInitialState = { name: "", lastName: "", dni: "", email: "", password: "", phone: "", addres: ""};
     const [form, handleChange] = useForm(formInitialState)
-    const {signIn, isAuthenticated} = useAuthContext();
+    // const {signIn, isAuthenticated} = useAuthContext();
     const history = useHistory();
 
     const handleSubmit = async e => {
@@ -20,14 +20,13 @@ export default function Register() {
             body: JSON.stringify(form)
         }
 
-        const response = await fetch(LOGIN_URL, options);
+        const response = await fetch(REGISTER_URL, options);
         const data = await response.json();
         
         if(response.status >= 200 && response.status < 300) {
-            signIn(data.token, data.user);
-            history.push("/courses")
-        } else {
-            alert("Login incorrecto");
+            // signIn(data.token, data.user);
+            history.push("/login")    
+            alert("¡Bienvenido a Formatio!Ya puedes acceder a tu cuenta");
         }
     };
 
