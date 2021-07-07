@@ -1,4 +1,6 @@
 import {useState, useEffect} from "react";
+import CourseCardEdit from "./CourseCardEdit";
+import TeamCardEdit from "./TeamCardEdit";
 import './admin.css';
 
 export default function Admin() {
@@ -29,34 +31,13 @@ export default function Admin() {
          
             {courses.map(course => {
                 return (
-                    // <CourseCard course={course} /> 
-                <div>
-                    <h3>{course.name}</h3>
-                    <h4>{course.description}</h4>
-                    <h5>{course?.teacher?.name}</h5>
-                    <h5>{course?.teacher?.lastName}</h5>
-                    <p>{course.duration} horas</p>
-                    <p>{course.price} euros</p>
-                    <button>Eliminar</button>
-                    <button>Modificar</button>               
-                </div>
+                    <CourseCardEdit course={course} />          
                 )
             })}
 
             {teachers.map((teacher) => {
                 return (
-                    // <TeamCard teacher = {teacher}/> 
-                <div className="TeamCard">
-                    <img className="imgTeam"src={teacher.avatar} alt=""/>   
-                    <div className="teacherName">
-                        <h4>{teacher.name}</h4>
-                        <h4>{teacher.lastName}</h4>
-                        <p>{teacher.description}</p>   
-                    </div>
-                    <button>Eliminar</button>
-                    <button>Modificar</button>                
-              
-                </div>
+                    <TeamCardEdit teacher = {teacher}/>       
                 )
             })}
           

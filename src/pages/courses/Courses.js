@@ -1,6 +1,4 @@
 import {useState, useEffect} from "react";
-import { useAuthContext } from "../../context/AuthContext";
-
 import CourseCard from './CourseCard';
 import './courses.css';
 
