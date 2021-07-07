@@ -6,18 +6,6 @@ import './courses.css';
 
 export default function Courses() {
 
-    // const { isAuthenticated, setIsAuthenticated } = useAuthContext();
- 
-    // const [usersCourses, setUsersCourses] = useState([]);
-
-    // const USERSCOURSES_URL = "http://localhost:8000/api/users/courses";
-
-    // useEffect(() => {
-    //     fetch(USERSCOURSES_URL)
-    //     .then(response => response.json())
-    //     .then(data=>setUsersCourses(data))
-    // }, [])
-
     const [courses, setCourses] = useState([]);
 
     const COURSES_URL = "http://localhost:8000/api/courses";

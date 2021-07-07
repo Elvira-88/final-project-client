@@ -24,7 +24,7 @@ export default function Login() {
         const response = await fetch(LOGIN_URL, options);
         const data = await response.json();
         
-        if(response.status >= 200 && response.status < 300) {
+        if(response.status >= 200 && response.status < 300) {           
             signIn(data.token, data.user);
             history.push("/courses")
         } else {

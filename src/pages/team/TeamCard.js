@@ -9,8 +9,7 @@ export default function TeamCard({teacher}) {
                 <h4>{teacher.name}</h4>
                 <h4>{teacher.lastName}</h4>
                 <p>{teacher.description}</p>   
-            </div>  
-               
+            </div>                
       
         </div>
 
