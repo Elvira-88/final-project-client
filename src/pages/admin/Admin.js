@@ -1,6 +1,6 @@
 import {useState, useEffect} from "react";
 import CourseCardEdit from "./CourseCardEdit";
-import TeamCardEdit from "./TeamCardEdit";
+import TeamCardAdd from "./TeamCardAdd";
 import './admin.css';
 
 export default function Admin() {
@@ -37,7 +37,7 @@ export default function Admin() {
 
             {teachers.map((teacher) => {
                 return (
-                    <TeamCardEdit teacher = {teacher}/>       
+                    <TeamCardAdd teacher = {teacher}/>       
                 )
             })}
           

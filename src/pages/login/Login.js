@@ -30,21 +30,7 @@ export default function Login() {
         } else {
             alert("Login incorrecto");
         }
-    };
-
-   
-
-    // const history = useHistory();
-    // const { isAuthenticated, setIsAuthenticated } = useAuthContext();
-
-    // const LOGIN_URL = "";
-
-    // function login() {
-    //     fetch(LOGIN_URL)
-    //     .then(response => response.json())
-    //     .then()
-    //     setIsAuthenticated(true)
-    //     history.push(`/courses/`);
+    }; 
 
     return isAuthenticated ? <Redirect to="/courses" /> : (
         <div className="login">
