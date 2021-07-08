@@ -17,6 +17,8 @@ export default function CourseCardEdit({course}) {
 
         const response = await fetch(COURSES_URL, options);
         const data = await response.json();
+
+    }
       
 
     return (

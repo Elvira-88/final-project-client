@@ -1,6 +1,6 @@
 import { useForm } from "../../hooks/useForm";
+import { COURSES_URL } from "../../config/config";
 import {useState} from "react";
-import { TEACHERS_URL } from "../../config/config";
 
 export default function CourseCardAdd({teacher}) {
 
@@ -19,7 +19,7 @@ export default function CourseCardAdd({teacher}) {
             body: JSON.stringify(form)
         }
 
-        const response = await fetch(TEACHERS_URL, options);
+        const response = await fetch(COURSES_URL, options);
         const data = await response.json();
 
         const formImg = new FormData();
@@ -31,7 +31,8 @@ export default function CourseCardAdd({teacher}) {
         }
 
         const responseImg = await fetch(`TEACHERS_URL/${data.id}`, optionsImg);
-        const dataImg = await responseImg;        
+        const dataImg = await responseImg;
+        
     }
 
     return (
@@ -62,5 +63,3 @@ export default function CourseCardAdd({teacher}) {
         </div>
     )
 }
-
-

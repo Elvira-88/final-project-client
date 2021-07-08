@@ -2,12 +2,12 @@ import { Redirect, useHistory} from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
 import { useAuthContext } from "../../context/AuthContext";
 import { LOGIN_URL } from "../../config/config";
+import jwt_decode from "jwt-decode";
 import './login.css';
-
 
 export default function Login() {
 
-    const formInitialState = "";
+    const formInitialState = {username: "elvi@gmail.com", password: "12345678"};
     const [form, handleChange] = useForm(formInitialState);
     const {signIn, isAuthenticated} = useAuthContext();
     const history = useHistory();
@@ -24,9 +24,15 @@ export default function Login() {
         const response = await fetch(LOGIN_URL, options);
         const data = await response.json();
         
-        if(response.status >= 200 && response.status < 300) {           
-            signIn(data.token, data.user);
+        if(response.status >= 200 && response.status < 300) {   
+
+            const token = data.token;
+            const user = jwt_decode(token);
+
+            signIn(token, user);         
+            
             history.push("/courses")
+            
         } else {
             alert("Login incorrecto");
         }

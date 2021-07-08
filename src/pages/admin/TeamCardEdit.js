@@ -18,6 +18,8 @@ export default function TeacherCardEdit({teacher}) {
         const response = await fetch(TEACHERS_URL, options);
         const data = await response.json();
 
+    }
+
     return (
         <div>
         <form onSubmit={handleSubmit}>

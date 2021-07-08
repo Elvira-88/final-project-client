@@ -12,9 +12,14 @@ export default function AuthContext({children}) {
     const setToken = token => localStorage.setItem("TOKEN_KEY", token);
     const removeToken = () => localStorage.removeItem("TOKEN_KEY");
 
-    const isAdmin = () => loginUser?.role === "ADMIN";
+    // const isAdmin = () => loginUser?.role === "ADMIN"; 
+    // TODO: cambiar esto por la estructura del payload
+    // [].includes("ROLE_ADMIN") -> true / false
 
-    const signIn = (token, user) => {       
+    const isAdmin = () => loginUser.roles.includes("ROLE_ADMIN");
+
+    const signIn = (token, user) => {   
+        console.log( token, user);    
         setToken(token);
         setLoginUser(user);
         setIsAuthenticated(true);
