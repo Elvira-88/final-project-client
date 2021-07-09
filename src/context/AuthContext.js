@@ -10,11 +10,7 @@ export default function AuthContext({children}) {
 
     const getToken = () => localStorage.getItem("TOKEN_KEY");
     const setToken = token => localStorage.setItem("TOKEN_KEY", token);
-    const removeToken = () => localStorage.removeItem("TOKEN_KEY");
-
-    // const isAdmin = () => loginUser?.role === "ADMIN"; 
-    // TODO: cambiar esto por la estructura del payload
-    // [].includes("ROLE_ADMIN") -> true / false
+    const removeToken = () => localStorage.removeItem("TOKEN_KEY");  
 
     const isAdmin = () => loginUser.roles.includes("ROLE_ADMIN");
 

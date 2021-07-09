@@ -16,7 +16,7 @@ export default function CourseCard({course}) {
             <h5>{course?.teacher?.lastName}</h5>
             <p>{course.duration} horas</p>
             <p>{course.price} euros</p>
-            {course.cursando
+            {course.coursed
                 ? <span>Cursando</span>
                 : <button onClick={handleClick}>Contratar</button>
             }

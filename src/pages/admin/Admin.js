@@ -31,7 +31,7 @@ export default function Admin() {
      
         <div className="courses">
 
-            <CourseCardAdd />
+           
          
             {courses.map(course => {
                 return (
@@ -41,6 +41,8 @@ export default function Admin() {
                               
                 )
             })}
+
+            <CourseCardAdd />
 
             <TeamCardAdd /> 
 

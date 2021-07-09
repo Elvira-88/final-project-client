@@ -1,17 +1,20 @@
 import { useForm } from "../../hooks/useForm";
 import { COURSES_URL } from "../../config/config";
+import { useAuthContext } from "../../context/AuthContext";
 
 export default function CourseCardEdit({course}) {
 
-    const formInitialState = {name: course.name, description: course.description, teacherName: course?.teacher?.name, tacherLastName: course?.teacher?.lastName, duration: course.duration, price: course.price};    
+    const formInitialState = {name: course.name, description: course.description, teacherName: course?.teacher?.name, teacherLastName: course?.teacher?.lastName, duration: course.duration, price: course.price};    
     const [form, handleChange] = useForm(formInitialState);
+
+    const { getAuthHeaders } = useAuthContext(); 
      
     const handleSubmit = async e => {
         e.preventDefault();
         
         const options = {
             method: "PUT",
-            headers: {"Content-type": "application/json"},
+            headers: getAuthHeaders({"Content-type": "application/json"}),
             body: JSON.stringify(form)
         }
 

@@ -1,6 +1,7 @@
 import { useForm } from "../../hooks/useForm";
 import {useState} from "react";
 import { TEACHERS_URL } from "../../config/config";
+import { useAuthContext } from "../../context/AuthContext";
 
 export default function CourseCardAdd({teacher}) {
 
@@ -8,14 +9,16 @@ export default function CourseCardAdd({teacher}) {
     const [form, handleChange] = useForm(formInitialState);
     const [img, setImg] = useState('');
 
+    const { getAuthHeaders } = useAuthContext(); 
+
     const handleImgUpload = e => setImg(e.target.files[0]);
  
     const handleSubmit = async e => {
-        e.preventDefault();
-        
+        e.preventDefault();        
+
         const options = {
             method: "POST",
-            headers: {"Content-type": "application/json"},
+            headers: getAuthHeaders({"Content-type": "application/json"}),
             body: JSON.stringify(form)
         }
 
