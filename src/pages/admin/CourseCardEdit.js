@@ -22,7 +22,9 @@ export default function CourseCardEdit({course}) {
       
 
     return (
+        
         <div>
+            <h3>Modificar un curso</h3>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label for="nameInput">Curso</label>
@@ -44,7 +46,8 @@ export default function CourseCardEdit({course}) {
                 <div>
                     <label for="priceInput">Precio</label>
                     <input onChange={handleChange} value={form.price} name="price"/>
-                </div>               
+                </div> 
+                <button>Actualizar el curso</button>               
             </form>
         </div>
     )

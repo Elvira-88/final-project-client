@@ -36,6 +36,7 @@ export default function CourseCardAdd({teacher}) {
 
     return (
         <div>
+            <h3>Añadir un nuevo profesor a nuestro equipo</h3>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label for="avatarInput">Foto</label>
@@ -56,7 +57,8 @@ export default function CourseCardAdd({teacher}) {
                 <div>
                     <label for="courseInput">Curso</label>
                     <input onChange={handleChange} value={form.course} name="course"/>
-                </div>             
+                </div>   
+                 <button>Añadir</button>          
                
             </form>
         </div>

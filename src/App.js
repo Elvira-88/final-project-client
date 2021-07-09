@@ -20,6 +20,9 @@ function App() {
           <BrowserRouter>
             <Navbar/>
             <Switch>
+
+            <Route path="/admin" component={Admin}/>
+
               <Route exact path="/" component={Home}/>
               <Route path="/login" component={Login}/>
               <Route path="/register" component={Register}/>

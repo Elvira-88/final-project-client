@@ -3,7 +3,7 @@ import { TEACHERS_URL } from "../../config/config";
 
 export default function TeacherCardEdit({teacher}) {
 
-    const formInitialState = {name: teacher.name, lastName: teacher. lastName, description: teacher.description};    
+    const formInitialState = {name: teacher.name, lastName: teacher.lastName, description: teacher.description};    
     const [form, handleChange] = useForm(formInitialState);
 
     const handleSubmit = async e => {
@@ -21,7 +21,8 @@ export default function TeacherCardEdit({teacher}) {
     }
 
     return (
-        <div>
+    <div>
+            <h3>Modificación de algún dato de un profesor</h3>
         <form onSubmit={handleSubmit}>
             {/* <div>
                 <label for="avatarInput">Foto</label>
@@ -43,6 +44,7 @@ export default function TeacherCardEdit({teacher}) {
                 <label for="courseInput">Curso</label>
                 <input onChange={handleChange} value={form.course} name="course"/>
             </div>   
+            <button>Actualizar los datos</button>
            
         </form>
     </div>

@@ -18,8 +18,7 @@ export default function AuthContext({children}) {
 
     const isAdmin = () => loginUser.roles.includes("ROLE_ADMIN");
 
-    const signIn = (token, user) => {   
-        console.log( token, user);    
+    const signIn = (token, user) => {           
         setToken(token);
         setLoginUser(user);
         setIsAuthenticated(true);

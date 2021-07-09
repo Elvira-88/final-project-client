@@ -30,21 +30,23 @@ export default function Admin() {
     return (
      
         <div className="courses">
+
+            <CourseCardAdd />
          
             {courses.map(course => {
                 return (
-                    <div>
-                        <CourseCardAdd course={course} />
+                    <div>                        
                         <CourseCardEdit course={course} />
                     </div>                  
                               
                 )
             })}
 
+            <TeamCardAdd /> 
+
             {teachers.map((teacher) => {
                 return (
-                    <div>
-                        <TeamCardAdd teacher = {teacher}/> 
+                    <div>                        
                         <TeamCardEdit teacher = {teacher}/> 
                     </div>
                           

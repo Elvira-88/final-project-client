@@ -8,7 +8,7 @@ export default function Register() {
 
     const formInitialState = { name: "", lastName: "", dni: "", email: "", password: "", phone: "", addres: ""};
     const [form, handleChange] = useForm(formInitialState)
-    // const {signIn, isAuthenticated} = useAuthContext();
+   
     const history = useHistory();
 
     const handleSubmit = async e => {
@@ -24,7 +24,7 @@ export default function Register() {
         const data = await response.json();
         
         if(response.status >= 200 && response.status < 300) {
-            // signIn(data.token, data.user);
+            
             history.push("/login")    
             alert("¡Bienvenido a Formatio!Ya puedes acceder a tu cuenta");
         }
