@@ -1,10 +1,11 @@
 import { useForm } from "../../hooks/useForm";
 import { COURSES_URL } from "../../config/config";
 import { useAuthContext } from "../../context/AuthContext";
+import {useState, useEffect} from "react";
 
 export default function CourseCardEdit({course}) {
 
-    const formInitialState = {name: course.name, description: course.description, teacherName: course?.teacher?.name, teacherLastName: course?.teacher?.lastName, duration: course.duration, price: course.price};    
+    const formInitialState = {name: course.name, description: course.description, teacher_id: course.teacher_id, duration: course.duration, price: course.price};    
     const [form, handleChange] = useForm(formInitialState);
 
     const { getAuthHeaders } = useAuthContext(); 
@@ -18,12 +19,22 @@ export default function CourseCardEdit({course}) {
             body: JSON.stringify(form)
         }
 
-        const response = await fetch(COURSES_URL, options);
+        
+        const response = await fetch(COURSES_URL + "/" + course.id, options);
         const data = await response.json();
 
     }
-      
 
+    const [teachers, setTeachers] = useState([]);
+
+    const TEACHERS_URL = "http://localhost:8000/api/teachers";
+
+    useEffect(() => {
+        fetch(TEACHERS_URL)
+        .then(response => response.json())
+        .then(data=>setTeachers(data))      
+    }, [])
+    
     return (
         
         <div>
@@ -38,9 +49,20 @@ export default function CourseCardEdit({course}) {
                     <input onChange={handleChange} value={form.description} name="description"/>
                 </div>
                 <div>
-                    <label for="teacherInput">Profesor</label>
+                    {/* <label for="teacherInput">Profesor</label>
                     <input onChange={handleChange} value={form.teacherName} name="teacherName"/>
-                    <input onChange={handleChange} value={form.teacherLastName} name="teacherLastName"/>
+                    <input onChange={handleChange} value={form.teacherLastName} name="teacherLastName"/> */}
+
+                <label for="teacherInput">Profesor</label>           
+              
+                <select onChange={handleChange} value={form.teacher_id} name="teacher_id">
+                {teachers.map(teacher => {
+                    return (
+                        <option value={teacher.id}>{teacher.name} {teacher.lastName}</option>
+                    )                        
+                })}
+                </select>                        
+                                    
                 </div>
                 <div>
                     <label for="durationInput">Duración</label>

@@ -3,9 +3,9 @@ import { COURSES_URL } from "../../config/config";
 import { useAuthContext } from "../../context/AuthContext";
 import {useState, useEffect} from "react";
 
-export default function CourseCardAdd({course}) {
+export default function CourseCardAdd({}) {
 
-    const formInitialState = {name: "", description: "", teacher: "", duration: "", price: ""};    
+    const formInitialState = {name: "", description: "", teacher_id: "", duration: "", price: ""};    
     const [form, handleChange] = useForm(formInitialState);
 
     const { getAuthHeaders } = useAuthContext();
@@ -24,6 +24,7 @@ export default function CourseCardAdd({course}) {
         
     }
 
+
     const [teachers, setTeachers] = useState([]);
 
     const TEACHERS_URL = "http://localhost:8000/api/teachers";
@@ -31,17 +32,24 @@ export default function CourseCardAdd({course}) {
     useEffect(() => {
         fetch(TEACHERS_URL)
         .then(response => response.json())
-        .then(data=>setTeachers(data))
+        .then(data=>setTeachers(data))      
     }, [])
 
     return (
         <div>
-              <h3>Añadir un nuevo curso</h3>
-              <form onSubmit={handleSubmit}>
+            <h3>Añadir un nuevo curso</h3>
+            <form onSubmit={handleSubmit}> 
 
-            {/* <select name="teacher">
-                        <option value={teacher.name}></option>
-            </select> */}
+                <label for="teacherInput">Profesor</label>           
+              
+                <select onChange={handleChange} value={form.teacher_id} name="teacher_id">
+                {teachers.map(teacher => {
+                    return (
+                        <option value={teacher.id}>{teacher.name} {teacher.lastName}</option>
+                    )                        
+                })}
+                </select>                        
+                                      
                   
                 <div>
                     <label for="nameInput">Curso</label>

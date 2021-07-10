@@ -1,10 +1,11 @@
 import { useForm } from "../../hooks/useForm";
 import { TEACHERS_URL } from "../../config/config";
 import { useAuthContext } from "../../context/AuthContext";
+import {useState, useEffect} from "react";
 
-export default function TeacherCardEdit({teacher}) {
+export default function TeacherCardEdit({teacher, courses}) {
 
-    const formInitialState = {name: teacher.name, lastName: teacher.lastName, description: teacher.description, courseName: teacher?.course?.name};    
+    const formInitialState = {name: teacher.name, lastName: teacher.lastName, description: teacher.description, course_id: teacher?.course_id};    
     const [form, handleChange] = useForm(formInitialState);
 
     const { getAuthHeaders } = useAuthContext();
@@ -22,6 +23,17 @@ export default function TeacherCardEdit({teacher}) {
         const data = await response.json();
 
     }
+
+    const [courses, setCourses] = useState([]);
+
+    const COURSES_URL = "http://localhost:8000/api/courses";
+
+    useEffect(() => {
+        fetch(COURSES_URL)
+        .then(response => response.json())
+        .then(data=>setCourses(data))
+    }, [])
+
 
     return (
     <div>
@@ -45,7 +57,13 @@ export default function TeacherCardEdit({teacher}) {
             </div>
             <div>
                 <label for="courseInput">Curso</label>
-                <input onChange={handleChange} value={form.courseName} name="courseName"/>
+                <select onChange={handleChange} value={form.course_id} name="course_id">
+                {courses.map(course => {
+                    return (
+                        <option value={course.id}>{course.name}</option>
+                    )                        
+                })}
+                </select> 
             </div>   
             <button>Actualizar los datos</button>
            

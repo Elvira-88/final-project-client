@@ -1,11 +1,11 @@
 import { useForm } from "../../hooks/useForm";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import { TEACHERS_URL } from "../../config/config";
 import { useAuthContext } from "../../context/AuthContext";
 
 export default function CourseCardAdd({teacher}) {
 
-    const formInitialState = {name: "", lastName: "", description: "", course: ""};    
+    const formInitialState = {name: "", lastName: "", description: "", course_id: ""};    
     const [form, handleChange] = useForm(formInitialState);
     const [img, setImg] = useState('');
 
@@ -33,9 +33,19 @@ export default function CourseCardAdd({teacher}) {
             body:formImg
         }
 
-        const responseImg = await fetch(`TEACHERS_URL/${data.id}`, optionsImg);
+        const responseImg = await fetch(`TEACHERS_URL/updateimg${data.id}`, optionsImg);
         const dataImg = await responseImg;        
     }
+
+    const [courses, setCourses] = useState([]);
+
+    const COURSES_URL = "http://localhost:8000/api/courses";
+
+    useEffect(() => {
+        fetch(COURSES_URL)
+        .then(response => response.json())
+        .then(data=>setCourses(data))
+    }, [])
 
     return (
         <div>
@@ -57,10 +67,18 @@ export default function CourseCardAdd({teacher}) {
                     <label for="descriptionInput">Descripción</label>
                     <input onChange={handleChange} value={form.description} name="description"/>                    
                 </div>
-                <div>
-                    <label for="courseInput">Curso</label>
-                    <input onChange={handleChange} value={form.course} name="course"/>
-                </div>   
+                <div>            
+                <label for="courseInput">Curso</label>           
+              
+                <select onChange={handleChange} value={form.course_id} name="course_id">
+                {courses.map(course => {
+                    return (
+                        <option value={course.id}>{course.name}</option>
+                    )                        
+                })}
+                </select> 
+                </div>
+
                  <button>Añadir</button>          
                
             </form>

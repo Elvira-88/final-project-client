@@ -7,9 +7,9 @@ import './login.css';
 
 export default function Login() {
 
-    const formInitialState = {username: "elvi@gmail.com", password: "12345678"};
+    const formInitialState = {username: "marti@gmail.com", password: "123"};
     const [form, handleChange] = useForm(formInitialState);
-    const {signIn, isAuthenticated} = useAuthContext();
+    const {signIn, isAuthenticated, isAdmin} = useAuthContext();
     const history = useHistory();
 
     const handleSubmit = async e => {
@@ -29,9 +29,15 @@ export default function Login() {
             const token = data.token;
             const user = jwt_decode(token);
 
-            signIn(token, user);         
+            signIn(token, user);
             
-            history.push("/courses")
+            // if  (isAdmin()) {
+            //     history.push("/admin")
+            // } else {
+            //     history.push("/course")
+            // }  
+            
+            history.push("/admin")      
             
         } else {
             alert("Login incorrecto");
