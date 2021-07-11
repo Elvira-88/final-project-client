@@ -72,7 +72,8 @@ export default function CourseCardEdit({course}) {
                     <label for="priceInput">Precio</label>
                     <input onChange={handleChange} value={form.price} name="price"/>
                 </div> 
-                <button>Actualizar el curso</button>               
+                <button>Actualizar el curso</button>  
+                <button>Eliminar</button>             
             </form>
         </div>
     )

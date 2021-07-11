@@ -3,7 +3,7 @@ import { TEACHERS_URL } from "../../config/config";
 import { useAuthContext } from "../../context/AuthContext";
 import {useState, useEffect} from "react";
 
-export default function TeacherCardEdit({teacher, courses}) {
+export default function TeacherCardEdit({teacher}) {
 
     const formInitialState = {name: teacher.name, lastName: teacher.lastName, description: teacher.description, course_id: teacher?.course_id};    
     const [form, handleChange] = useForm(formInitialState);
@@ -19,7 +19,7 @@ export default function TeacherCardEdit({teacher, courses}) {
             body: JSON.stringify(form)
         }
 
-        const response = await fetch(TEACHERS_URL, options);
+        const response = await fetch(TEACHERS_URL + "/" + teacher.id, options);
         const data = await response.json();
 
     }
@@ -66,6 +66,7 @@ export default function TeacherCardEdit({teacher, courses}) {
                 </select> 
             </div>   
             <button>Actualizar los datos</button>
+            <button>Eliminar</button>
            
         </form>
     </div>
