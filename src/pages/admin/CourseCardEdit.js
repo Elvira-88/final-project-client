@@ -25,6 +25,20 @@ export default function CourseCardEdit({course}) {
 
     }
 
+        
+    const handleDelete = async e => {
+        e.preventDefault();
+        
+        const options = {
+            method: "DELETE",
+            headers: getAuthHeaders({"Content-type": "application/json"}),
+           
+        }
+        
+        const response = await fetch(COURSES_URL + "/" + course.id, options);
+        const data = await response.json();
+    }
+
     const [teachers, setTeachers] = useState([]);
 
     const TEACHERS_URL = "http://localhost:8000/api/teachers";
@@ -73,7 +87,7 @@ export default function CourseCardEdit({course}) {
                     <input onChange={handleChange} value={form.price} name="price"/>
                 </div> 
                 <button>Actualizar el curso</button>  
-                <button>Eliminar</button>             
+                <button onClick={handleDelete}>Eliminar</button>             
             </form>
         </div>
     )

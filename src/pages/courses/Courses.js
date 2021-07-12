@@ -17,26 +17,27 @@ export default function Courses() {
         // body: JSON.stringify(form)
     }
 
-    console.log(options);
-
     useEffect(() => {
         fetch(COURSES_URL, options)
-        .then(response => response.json())
-        .then(data=>setCourses(data))        
+        .then(response => response.json()) 
+        .then(data=>setCourses(data))     
+    
+        
     }, [])
 
-   
-    
+    // useEffect(() => { fetch(COURSES_URL, options) .then(response => { response.json(); alert(JSON.stringify(response.json())) }) .then(data=>setCourses(data)) }, [])   
 
     return (
      
         <div className="courses">
-         
             {courses.map(course => {
                 return (
                     <CourseCard course={course} /> 
                 )
-            })}
+            })} 
+
+                
+            
           
         </div>
     )

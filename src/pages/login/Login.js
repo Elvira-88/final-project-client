@@ -35,9 +35,8 @@ export default function Login() {
                 history.push("/admin")
             } else {
                 history.push("/courses")
-            }          
-                 
-            
+            }  
+         
         } else {
             alert("Login incorrecto");
         }
