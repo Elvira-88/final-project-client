@@ -14,6 +14,9 @@ export default function CourseCardAdd({teacher}) {
     const handleImgUpload = e => setImg(e.target.files[0]);
  
     const handleSubmit = async e => {
+
+        console.log('form submited!');
+
         e.preventDefault();        
 
         const options = {
@@ -24,6 +27,7 @@ export default function CourseCardAdd({teacher}) {
 
         const response = await fetch(TEACHERS_URL, options);
         const data = await response.json();
+        console.log(data);
 
         const formImg = new FormData();
         formImg.append("avatar", img);
@@ -33,7 +37,7 @@ export default function CourseCardAdd({teacher}) {
             body:formImg
         }
 
-        const responseImg = await fetch(`TEACHERS_URL/updateimg${data.id}`, optionsImg);
+        const responseImg = await fetch(`${TEACHERS_URL}/updateimg/${data.id}`, optionsImg);
         const dataImg = await responseImg;        
     }
 

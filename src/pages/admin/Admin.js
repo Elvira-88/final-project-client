@@ -46,14 +46,7 @@ export default function Admin() {
 
             <TeamCardAdd /> 
 
-            {teachers.map((teacher) => {
-                return (
-                    <div>                        
-                        <TeamCardEdit teacher = {teacher}/> 
-                    </div>
-                          
-                )
-            })}
+            {teachers.map((teacher) => <div><TeamCardEdit teacher = {teacher}/></div>)}
           
         </div>
     )    

@@ -17,6 +17,8 @@ export default function Courses() {
         // body: JSON.stringify(form)
     }
 
+    console.log(options);
+
     useEffect(() => {
         fetch(COURSES_URL, options)
         .then(response => response.json())
