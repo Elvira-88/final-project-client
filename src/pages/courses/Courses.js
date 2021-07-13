@@ -9,24 +9,18 @@ export default function Courses() {
 
     const COURSES_URL = "http://localhost:8000/api/courses";
 
-    const { getAuthHeaders } = useAuthContext();
+    const { getAuthHeaders, isAuthenticated } = useAuthContext();    
+  
+    useEffect(() => { 
 
-    const options = {
-        // method: "PUT",
-        headers: getAuthHeaders({"Content-type": "application/json"}),
-        // body: JSON.stringify(form)
-    }
-
-    useEffect(() => {
+        const options = isAuthenticated? {headers: getAuthHeaders({"Content-type": "application/json"})} : {};
+        
+      
         fetch(COURSES_URL, options)
         .then(response => response.json()) 
-        .then(data=>setCourses(data))     
-    
-        
-    }, [])
-
-    // useEffect(() => { fetch(COURSES_URL, options) .then(response => { response.json(); alert(JSON.stringify(response.json())) }) .then(data=>setCourses(data)) }, [])   
-
+        .then(data=>setCourses(data))             
+    }, []) 
+ 
     return (
      
         <div className="courses">
@@ -34,11 +28,8 @@ export default function Courses() {
                 return (
                     <CourseCard course={course} /> 
                 )
-            })} 
-
-                
-            
-          
+            })}             
+             
         </div>
     )
 }

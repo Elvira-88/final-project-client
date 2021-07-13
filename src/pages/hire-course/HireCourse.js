@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react";
 import {useParams, useHistory} from "react-router-dom";
 import { useAuthContext } from "../../context/AuthContext";
+import './hireCourse.css';
 
 export default function HireCourse() {
     
@@ -48,7 +49,7 @@ export default function HireCourse() {
 
 
     return (
-        <div>
+        <div className="hireCourse">
             <h3>Nombre del curso: {hireCourse.name}</h3>
             <h3>Duración: {hireCourse.duration} horas</h3>
             <h1>Total a pagar: {hireCourse.price} €</h1>
