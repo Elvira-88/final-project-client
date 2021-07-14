@@ -55,11 +55,11 @@ export default function HireCourse() {
 
     return (
         <div className="hireCourse">
-            <h3>Nombre del curso: {hireCourse.name}</h3>
-            <h3>Duración: {hireCourse.duration} horas</h3>
+            <h2>Curso: {hireCourse.name}</h2>
+            <h2>Duración: {hireCourse.duration} horas</h2>
             <h1>Total a pagar: {hireCourse.price} €</h1>
             <div>   
-                <h4>Método de pago</h4>        
+                <h3>Método de pago</h3>                     
                 <div>
                     <input type="radio" name="paymentMethod" id="paypalInput"></input>
                     <label for="paypalInput">Paypal</label>
@@ -72,7 +72,7 @@ export default function HireCourse() {
                     <input type="radio" name="paymentMethod" id="bizumInput" required></input>
                     <label for="bizumInput">Bizum</label>
                 </div>   
-                <button onClick={handlePay}>Pagar</button>           
+                <button className="buttonPay" onClick={handlePay}>Pagar</button>           
             </div>  
         </div>
     )

@@ -69,13 +69,13 @@ export default function TeacherCardEdit({teacher}) {
                 <input onChange={handleChange} value={form.description} name="description"/>                    
             </div>
             <div>
-                <label for="courseInput">Curso</label>
                 <select onChange={handleChange} value={form.course_id} name="course_id">
-                {courses.map(course => {
-                    return (
-                        <option value={course.id}>{course.name}</option>
-                    )                        
-                })}
+                    <option value="">Seleccione un curso</option>
+                    {courses.map(course => {
+                        return (
+                            <option value={course.id}>{course.name}</option>
+                        )                        
+                    })}
                 </select> 
             </div>   
             <button>Actualizar los datos</button>

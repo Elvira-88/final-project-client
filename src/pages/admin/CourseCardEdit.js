@@ -62,22 +62,15 @@ export default function CourseCardEdit({course}) {
                     <label for="descriptionInput">Descripción</label>
                     <input onChange={handleChange} value={form.description} name="description"/>
                 </div>
-                <div>
-                    {/* <label for="teacherInput">Profesor</label>
-                    <input onChange={handleChange} value={form.teacherName} name="teacherName"/>
-                    <input onChange={handleChange} value={form.teacherLastName} name="teacherLastName"/> */}
-{/* 
-                <label for="teacherInput">Profesor</label>            */}
-              
-                <select onChange={handleChange} value={form.teacher_id} name="teacher_id">
-                <option value="">Seleccione un profesor</option>
-                {teachers.map(teacher => {
-                    return (
-                        <option value={teacher.id}>{teacher.name} {teacher.lastName}</option>
-                    )                        
-                })}
-                </select>                        
-                                    
+                <div>              
+                    <select onChange={handleChange} value={form.teacher_id} name="teacher_id">
+                    <option value="">Seleccione un profesor</option>
+                    {teachers.map(teacher => {
+                        return (
+                            <option value={teacher.id}>{teacher.name} {teacher.lastName}</option>
+                        )                        
+                    })}
+                    </select>                                 
                 </div>
                 <div>
                     <label for="durationInput">Duración</label>

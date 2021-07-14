@@ -71,16 +71,15 @@ export default function CourseCardAdd({teacher}) {
                     <label for="descriptionInput">Descripción</label>
                     <input onChange={handleChange} value={form.description} name="description"/>                    
                 </div>
-                <div>            
-                <label for="courseInput">Curso</label>           
-              
-                <select onChange={handleChange} value={form.course_id} name="course_id">
-                {courses.map(course => {
-                    return (
-                        <option value={course.id}>{course.name}</option>
-                    )                        
-                })}
-                </select> 
+                <div>       
+                    <select onChange={handleChange} value={form.course_id} name="course_id">
+                    <option value="">Seleccione un curso</option>
+                    {courses.map(course => {
+                        return (
+                            <option value={course.id}>{course.name}</option>
+                        )                        
+                    })}
+                    </select> 
                 </div>
 
                  <button>Añadir</button>          

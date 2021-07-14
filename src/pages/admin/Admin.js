@@ -1,54 +1,27 @@
-import {useState, useEffect} from "react";
-import CourseCardAdd from "./CourseCardAdd";
-import CourseCardEdit from "./CourseCardEdit";
-import TeamCardAdd from "./TeamCardAdd";
-import TeamCardEdit from "./TeamCardEdit"
 import './admin.css';
+import {useHistory} from "react-router-dom";
 
 export default function Admin() {
 
-    const [courses, setCourses] = useState([]);
+    const history = useHistory();
 
-    const COURSES_URL = "http://localhost:8000/api/courses";
+    function handleCourses() {
+        history.push("/")
+    }
 
-    useEffect(() => {
-        fetch(COURSES_URL)
-        .then(response => response.json())
-        .then(data=>setCourses(data))
-    }, [])
-
-    const [teachers, setTeachers] = useState([]);
-
-    const TEACHERS_URL = "http://localhost:8000/api/teachers";
-
-    useEffect(() => {
-        fetch(TEACHERS_URL)
-        .then(response => response.json())
-        .then(data=>setTeachers(data))
-    }, [])
+    function handleTeachers() {
+        history.push("/")
+    }
 
     return (
-     
-        <div className="courses">
-
-           
-         
-            {courses.map(course => {
-                return (
-                    <div>                        
-                        <CourseCardEdit course={course} />
-                    </div>                  
-                              
-                )
-            })}
-
-            <CourseCardAdd />
-
-            <TeamCardAdd /> 
-
-            {teachers.map((teacher) => <div><TeamCardEdit teacher = {teacher}/></div>)}
-          
+        <div className="admin">
+            <h2>Bienvenido a la Dirección y Gestión de Formatio</h2>
+            <h3>Accede a una de nuestras áreas</h3>
+            <button onClick={()=>handleCourses()}>Cursos</button>
+            <button onClick={()=>handleTeachers()}>Profesores</button>
+            <button>Alumnos</button>
+            <button className="enrollments">Matrículas</button>            
         </div>
-    )    
+    )
 }
 

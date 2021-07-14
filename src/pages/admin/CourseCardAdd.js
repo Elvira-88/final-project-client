@@ -38,19 +38,8 @@ export default function CourseCardAdd({}) {
     return (
         <div>
             <h3>Añadir un nuevo curso</h3>
-            <form onSubmit={handleSubmit}> 
-
-                <label for="teacherInput">Profesor</label>           
-              
-                <select onChange={handleChange} value={form.teacher_id} name="teacher_id">
-                {teachers.map(teacher => {
-                    return (
-                        <option value={teacher.id}>{teacher.name} {teacher.lastName}</option>
-                    )                        
-                })}
-                </select>                        
-                                      
-                  
+            <form onSubmit={handleSubmit}>                         
+                      
                 <div>
                     <label for="nameInput">Curso</label>
                     <input onChange={handleChange} value={form.name} name="name"/>
@@ -60,9 +49,14 @@ export default function CourseCardAdd({}) {
                     <input onChange={handleChange} value={form.description} name="description"/>
                 </div>
                 <div>
-                    {/* <label for="teacherInput">Profesor</label>
-                    <input onChange={handleChange} value={form.teacherName} name="teacherName"/>
-                    <input onChange={handleChange} value={form.teacherLastName} name="teacherLastName"/> */}                 
+                    <select onChange={handleChange} value={form.teacher_id} name="teacher_id">
+                        <option value="">Seleccione un profesor</option>
+                        {teachers.map(teacher => {
+                            return (
+                                <option value={teacher.id}>{teacher.name} {teacher.lastName}</option>
+                            )                        
+                        })}
+                    </select>       
                 </div>
                 <div>
                     <label for="durationInput">Duración</label>

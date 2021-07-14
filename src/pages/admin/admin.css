@@ -1,0 +1,13 @@
+.admin {
+    background-color: rgb(170, 142, 65);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    
+}
+
+.enrollments {
+    margin-bottom: 20px;
+}
