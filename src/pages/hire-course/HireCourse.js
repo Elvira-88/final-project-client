@@ -17,7 +17,7 @@ export default function HireCourse() {
         
      };
 
-    const { getAuthHeaders } = useAuthContext();
+    const { getAuthHeaders, isAuthenticated } = useAuthContext();
 
     const COURSES_URL = "http://localhost:8000/api/courses/";  
 
@@ -32,9 +32,14 @@ export default function HireCourse() {
             body: JSON.stringify(form)
         }
 
-        const response = await fetch(ENROLLMENTS_URL, options);
-        const data = await response.json();
-        history.push("/courses")
+        if (!isAuthenticated) {
+            alert("Tienes que tener una cuenta con nosotros para comprar un curso")
+            history.push("/login")
+        } else {
+            const response = await fetch(ENROLLMENTS_URL, options);
+            const data = await response.json();
+            history.push("/courses")
+        }    
 
     }
     
