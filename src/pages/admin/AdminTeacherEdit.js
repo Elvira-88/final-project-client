@@ -2,41 +2,37 @@ import {useState, useEffect} from "react";
 import {useParams, useHistory} from "react-router-dom";
 import { useAuthContext } from "../../context/AuthContext";
 import { useForm } from "../../hooks/useForm";
-import CourseCardEdit from "./CourseCardEdit";
+import TeamCardEdit from "../admin/TeamCardEdit";
 
-export default function AdminCourseEdit() {  
+export default function AdminTeacherEdit() {  
      
-    const [courses, setCourses] = useState([]);
+    const [teachers, setTeachers] = useState([]);
 
     const {id} = useParams();  
   
 
-    const COURSES_URL = "http://localhost:8000/api/courses/";  
+    const TEACHERS_URL = "http://localhost:8000/api/teachers/";  
  
     useEffect(() => {
-        fetch(`${COURSES_URL}${id}`)
+        fetch(`${TEACHERS_URL}${id}`)
         .then(response => response.json())
         .then(data => {
-            setCourses([data]);
+            setTeachers([data]);
         }) 
           
     }, [id])  
 
     return (
-        <div className="courses">          
+        <div className="teachers">          
        
-        {courses && courses.map(course => {
+        {teachers && teachers.map(teacher => {
             return (
                 <div>                        
-                    <CourseCardEdit course={course} />
+                    <TeamCardEdit teacher={teacher} />
                 </div>                  
                           
             )
-        })}
-
-        
+        })}        
     </div>
     )
-
-  
 }

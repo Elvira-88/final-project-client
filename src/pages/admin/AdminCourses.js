@@ -31,7 +31,7 @@ export default function Courses() {
     return (
      
         <div className="courses">
-             <button onClick={handleAdd}>Añadir curso</button>
+            <button onClick={handleAdd}>Añadir curso</button>
             {courses.map(course => {
                 return (
                     <CourseCard course={course} /> 

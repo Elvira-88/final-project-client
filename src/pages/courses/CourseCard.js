@@ -34,8 +34,7 @@ export default function CourseCard({course}) {
             }          
             {isAuthenticated && isAdmin() &&
                 <button onClick={handleEdit}>Editar</button>
-            }
-            
+            }           
             
         </div>
     )

@@ -15,6 +15,9 @@ import AdminRoute from "./pages/admin/AdminRoute";
 import AdminCourses from "./pages/admin/AdminCourses";
 import AdminCourseEdit from  "./pages/admin/AdminCourseEdit";
 import AdminCourseAdd from "./pages/admin/CourseCardAdd";
+import AdminTeachers from "./pages/admin/AdminTeachers";
+import AdminTeacherEdit from "./pages/admin/AdminTeacherEdit";
+import AdminTeacherAdd from "./pages/admin/TeamCardAdd";
 
 function App() {
   return (
@@ -41,7 +44,15 @@ function App() {
               <AdminRoute path="/admin-course-edit/:id">
                 <AdminCourseEdit/>
               </AdminRoute>
-                                
+              <AdminRoute path="/admin-teachers">
+                <AdminTeachers />
+              </AdminRoute> 
+              <AdminRoute path="/admin-teachers-add">
+                <AdminTeacherAdd />
+              </AdminRoute> 
+              <AdminRoute path="/admin-teacher-edit/:id">
+                <AdminTeacherEdit/>
+              </AdminRoute>                                
             </Switch>
           </BrowserRouter>
       </AuthContext>

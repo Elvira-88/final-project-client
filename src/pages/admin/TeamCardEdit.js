@@ -2,6 +2,7 @@ import { useForm } from "../../hooks/useForm";
 import { TEACHERS_URL } from "../../config/config";
 import { useAuthContext } from "../../context/AuthContext";
 import {useState, useEffect} from "react";
+import {useHistory} from "react-router-dom";
 
 export default function TeacherCardEdit({teacher}) {
 
@@ -9,6 +10,8 @@ export default function TeacherCardEdit({teacher}) {
     const [form, handleChange] = useForm(formInitialState);
 
     const { getAuthHeaders } = useAuthContext();
+
+    const history = useHistory();
 
     const handleSubmit = async e => {
         e.preventDefault();
@@ -20,7 +23,14 @@ export default function TeacherCardEdit({teacher}) {
         }
 
         const response = await fetch(TEACHERS_URL + "/" + teacher.id, options);
-        const data = await response.json();
+        // const data = await response.json();
+        if(response.status >= 200 && response.status < 300) {   
+
+            history.push("/admin-teachers")
+         
+        } else {
+            alert("No se pudo modificar");
+        }
 
     }
 
@@ -34,7 +44,15 @@ export default function TeacherCardEdit({teacher}) {
         }
         
         const response = await fetch(TEACHERS_URL + "/" + teacher.id, options);
-        const data = await response.json();
+        // const data = await response.json();
+
+        if(response.status >= 200 && response.status < 300) {  
+            
+            history.push("/admin-teachers")
+         
+        } else {
+            alert("No se pudo eliminar");
+        }
     }
 
     const [courses, setCourses] = useState([]);

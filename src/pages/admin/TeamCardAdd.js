@@ -2,6 +2,7 @@ import { useForm } from "../../hooks/useForm";
 import {useState, useEffect} from "react";
 import { TEACHERS_URL } from "../../config/config";
 import { useAuthContext } from "../../context/AuthContext";
+import {useHistory} from "react-router-dom";
 
 export default function CourseCardAdd({teacher}) {
 
@@ -9,13 +10,13 @@ export default function CourseCardAdd({teacher}) {
     const [form, handleChange] = useForm(formInitialState);
     const [img, setImg] = useState('');
 
+    const history = useHistory();
+
     const { getAuthHeaders } = useAuthContext(); 
 
     const handleImgUpload = e => setImg(e.target.files[0]);
  
     const handleSubmit = async e => {
-
-        console.log('form submited!');
 
         e.preventDefault();        
 
@@ -27,8 +28,15 @@ export default function CourseCardAdd({teacher}) {
 
         const response = await fetch(TEACHERS_URL, options);
         const data = await response.json();
-        console.log(data);
 
+        if(response.status >= 200 && response.status < 300) {   
+
+            history.push("/admin-teachers")
+         
+        } else {
+            alert("No se pudo añadir");
+        }        
+        
         const formImg = new FormData();
         formImg.append("avatar", img);
 

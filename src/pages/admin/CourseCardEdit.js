@@ -51,12 +51,11 @@ export default function CourseCardEdit({course}) {
         // const data = await response.json();
 
         if(response.status >= 200 && response.status < 300) {  
-            alert("Hola");
-
+            
             history.push("/admin-courses")
          
         } else {
-            alert("No se pudo guardar");
+            alert("No se pudo eliminar");
         }
        
     }

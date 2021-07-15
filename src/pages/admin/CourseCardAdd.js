@@ -29,11 +29,10 @@ export default function CourseCardAdd({}) {
             history.push("/admin-courses")
          
         } else {
-            alert("No se pudo guardar");
+            alert("No se pudo añadir");
         }
         
     }
-
 
     const [teachers, setTeachers] = useState([]);
 
