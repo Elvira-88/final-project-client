@@ -14,6 +14,7 @@ import Admin from "./pages/admin/Admin";
 import AdminRoute from "./pages/admin/AdminRoute";
 import AdminCourses from "./pages/admin/AdminCourses";
 import AdminCourseEdit from  "./pages/admin/AdminCourseEdit";
+import AdminCourseAdd from "./pages/admin/CourseCardAdd";
 
 function App() {
   return (
@@ -34,8 +35,8 @@ function App() {
               <AdminRoute path="/admin-courses">
                 <AdminCourses />
               </AdminRoute> 
-              <AdminRoute path="/admin-courses">
-                <AdminCourses />
+              <AdminRoute path="/admin-courses-add">
+                <AdminCourseAdd />
               </AdminRoute> 
               <AdminRoute path="/admin-course-edit/:id">
                 <AdminCourseEdit/>

@@ -2,6 +2,7 @@ import { useForm } from "../../hooks/useForm";
 import { COURSES_URL } from "../../config/config";
 import { useAuthContext } from "../../context/AuthContext";
 import {useState, useEffect} from "react";
+import {useHistory} from "react-router-dom";
 
 export default function CourseCardAdd({}) {
 
@@ -9,6 +10,8 @@ export default function CourseCardAdd({}) {
     const [form, handleChange] = useForm(formInitialState);
 
     const { getAuthHeaders } = useAuthContext();
+
+    const history = useHistory();
 
     const handleSubmit = async e => {
         e.preventDefault();
@@ -20,7 +23,14 @@ export default function CourseCardAdd({}) {
         }
 
         const response = await fetch(COURSES_URL, options);
-        const data = await response.json();
+        
+        if(response.status >= 200 && response.status < 300) {   
+
+            history.push("/admin-courses")
+         
+        } else {
+            alert("No se pudo guardar");
+        }
         
     }
 

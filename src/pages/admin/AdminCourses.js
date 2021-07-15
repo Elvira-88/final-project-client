@@ -1,11 +1,18 @@
 import {useState, useEffect} from "react";
 import CourseCard from '../courses/CourseCard';
 import { useAuthContext } from "../../context/AuthContext";
+import {useHistory} from "react-router-dom";
 
 
 export default function Courses() {
 
     const [courses, setCourses] = useState([]);
+
+    const history = useHistory();
+
+    function handleAdd() {
+        history.push("/admin-courses-add");
+    }
 
     const COURSES_URL = "http://localhost:8000/api/courses";
 
@@ -24,6 +31,7 @@ export default function Courses() {
     return (
      
         <div className="courses">
+             <button onClick={handleAdd}>Añadir curso</button>
             {courses.map(course => {
                 return (
                     <CourseCard course={course} /> 

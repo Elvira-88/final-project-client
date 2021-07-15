@@ -2,6 +2,7 @@ import { useForm } from "../../hooks/useForm";
 import { COURSES_URL } from "../../config/config";
 import { useAuthContext } from "../../context/AuthContext";
 import {useState, useEffect} from "react";
+import {useHistory} from "react-router-dom";
 
 export default function CourseCardEdit({course}) {
 
@@ -9,6 +10,8 @@ export default function CourseCardEdit({course}) {
     const [form, handleChange] = useForm(formInitialState);
 
     const { getAuthHeaders } = useAuthContext(); 
+
+    const history = useHistory();
      
     const handleSubmit = async e => {
         e.preventDefault();
@@ -21,7 +24,16 @@ export default function CourseCardEdit({course}) {
 
         
         const response = await fetch(COURSES_URL + "/" + course.id, options);
-        const data = await response.json();
+        // const data = await response.json();
+
+        
+        if(response.status >= 200 && response.status < 300) {   
+
+            history.push("/admin-courses")
+         
+        } else {
+            alert("No se pudo guardar");
+        }
 
     }
 
@@ -36,7 +48,17 @@ export default function CourseCardEdit({course}) {
         }
         
         const response = await fetch(COURSES_URL + "/" + course.id, options);
-        const data = await response.json();
+        // const data = await response.json();
+
+        if(response.status >= 200 && response.status < 300) {  
+            alert("Hola");
+
+            history.push("/admin-courses")
+         
+        } else {
+            alert("No se pudo guardar");
+        }
+       
     }
 
     const [teachers, setTeachers] = useState([]);
@@ -52,7 +74,7 @@ export default function CourseCardEdit({course}) {
     return (
         
         <div>
-            <h3>Modificar un curso</h3>
+            <h3>Modificar un curso {form.name}</h3>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label for="nameInput">Curso</label>

@@ -5,7 +5,7 @@ export default function CourseCard({course}) {
  
     const history = useHistory();
 
-    const {isAdmin} = useAuthContext();
+    const {isAdmin, isAuthenticated} = useAuthContext();
 
     function handleClick() {
         history.push(`/hire-course/${course.id}`);
@@ -23,15 +23,19 @@ export default function CourseCard({course}) {
             <h5>{course?.teacher?.lastName}</h5>
             <p>{course.duration} horas</p>
             <p>{course.price} euros</p>
-            {course.coursed && !isAdmin &&
-                <span>Cursando</span> 
-            } 
-            {!course.coursed && !isAdmin &&
+            {!isAuthenticated && 
                 <button onClick={handleClick}>Contratar</button>
-            }             
-            {isAdmin &&
+            }
+            {isAuthenticated && !course.coursed && !isAdmin() &&
+                <button onClick={handleClick}>Contratar</button>
+            } 
+            {isAuthenticated && course.coursed &&
+                <span>Cursando</span> 
+            }          
+            {isAuthenticated && isAdmin() &&
                 <button onClick={handleEdit}>Editar</button>
             }
+            
             
         </div>
     )

@@ -6,9 +6,11 @@ import CourseCardEdit from "./CourseCardEdit";
 
 export default function AdminCourseEdit() {  
      
-    const [course, setCourse] = useState({});
+    const [courses, setCourses] = useState([]);
 
-    const {id} = useParams();     
+    const {id} = useParams();    
+    
+  
 
     const COURSES_URL = "http://localhost:8000/api/courses/";  
  
@@ -16,27 +18,25 @@ export default function AdminCourseEdit() {
         fetch(`${COURSES_URL}${id}`)
         .then(response => response.json())
         .then(data => {
-            setCourse(data);
+            setCourses([data]);
         }) 
           
-    }, [id])
-
-    const [teachers, setTeachers] = useState([]);
-
-    const TEACHERS_URL = "http://localhost:8000/api/teachers";
-
-    useEffect(() => {
-        fetch(TEACHERS_URL)
-        .then(response => response.json())
-        .then(data=>setTeachers(data))      
-    }, [])
+    }, [id])  
 
     return (
-        <div className="courses">
-            { course &&
-                <CourseCardEdit course={course} />
-            }
-        </div>
+        <div className="courses">          
+       
+        {courses && courses.map(course => {
+            return (
+                <div>                        
+                    <CourseCardEdit course={course} />
+                </div>                  
+                          
+            )
+        })}
+
+        
+    </div>
     )
 
   
