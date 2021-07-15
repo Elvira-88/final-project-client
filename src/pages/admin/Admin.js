@@ -6,7 +6,7 @@ export default function Admin() {
     const history = useHistory();
 
     function handleCourses() {
-        history.push("/")
+        history.push("/admin-courses")
     }
 
     function handleTeachers() {

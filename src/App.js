@@ -12,6 +12,8 @@ import Team from "./pages/team/Team";
 import HireCourse from "./pages/hire-course/HireCourse";
 import Admin from "./pages/admin/Admin";
 import AdminRoute from "./pages/admin/AdminRoute";
+import AdminCourses from "./pages/admin/AdminCourses";
+import AdminCourseEdit from  "./pages/admin/AdminCourseEdit";
 
 function App() {
   return (
@@ -28,7 +30,17 @@ function App() {
               <Route path="/hire-course/:id" component={HireCourse}/>  
               <AdminRoute path="/admin">
                 <Admin />
-              </AdminRoute>                      
+              </AdminRoute>  
+              <AdminRoute path="/admin-courses">
+                <AdminCourses />
+              </AdminRoute> 
+              <AdminRoute path="/admin-courses">
+                <AdminCourses />
+              </AdminRoute> 
+              <AdminRoute path="/admin-course-edit/:id">
+                <AdminCourseEdit/>
+              </AdminRoute>
+                                
             </Switch>
           </BrowserRouter>
       </AuthContext>
