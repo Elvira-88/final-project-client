@@ -1,10 +1,10 @@
 import {useState, useEffect} from "react";
-import CourseCard from '../courses/CourseCard';
-import { useAuthContext } from "../../context/AuthContext";
+import CourseCard from '../../courses/CourseCard';
+import { useAuthContext } from "../../../context/AuthContext";
 import {useHistory} from "react-router-dom";
 
 
-export default function Courses() {
+export default function AdminCourses() {
 
     const [courses, setCourses] = useState([]);
 

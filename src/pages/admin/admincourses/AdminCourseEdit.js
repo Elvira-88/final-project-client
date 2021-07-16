@@ -1,8 +1,6 @@
 import {useState, useEffect} from "react";
-import {useParams, useHistory} from "react-router-dom";
-import { useAuthContext } from "../../context/AuthContext";
-import { useForm } from "../../hooks/useForm";
-import CourseCardEdit from "./CourseCardEdit";
+import {useParams} from "react-router-dom";
+import CourseCardEdit from "././CourseCardEdit";
 
 export default function AdminCourseEdit() {  
      

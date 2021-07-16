@@ -1,9 +1,10 @@
 import {useState, useEffect} from "react";
-import TeamCard from '../team/TeamCard';
-import { useAuthContext } from "../../context/AuthContext";
+import TeamCard from '../../team/TeamCard';
+import { useAuthContext } from "../../../context/AuthContext";
 import {useHistory} from "react-router-dom";
+import "./adminteachers.css";
 
-export default function Team() {
+export default function AdminTeachers() {
 
     const [teachers, setTeachers] = useState([]);
 
@@ -27,13 +28,18 @@ export default function Team() {
     }, [])
     
     return (
-        <div className="team">
+        <div className="adminTeam">
+            <div className="buttonAddTeacher">
             <button onClick={handleAdd}>Añadir un profesor</button>
-            {teachers.map((teacher) => {
-                return (
-                    <TeamCard teacher = {teacher}/> 
-                )
-            })}
+            </div>
+            <div className="adminTeachers">
+                {teachers.map((teacher) => {
+                    return (
+                        <TeamCard teacher = {teacher}/> 
+                    )
+                })}
+                </div>
+         
                    
         </div>
     )

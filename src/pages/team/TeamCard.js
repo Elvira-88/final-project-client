@@ -8,10 +8,6 @@ export default function TeamCard({teacher}) {
 
     const {isAdmin, isAuthenticated} = useAuthContext();
 
-    // function handleClick() {
-    //     history.push(`/hire-course/${course.id}`);
-    // }
-
     function handleEdit() {
         history.push(`admin-teacher-edit/${teacher.id}`);
     }

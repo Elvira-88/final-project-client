@@ -1,12 +1,12 @@
-import { useForm } from "../../hooks/useForm";
-import { TEACHERS_URL } from "../../config/config";
-import { useAuthContext } from "../../context/AuthContext";
+import { useForm } from "../../../hooks/useForm";
+import { TEACHERS_URL } from "../../../config/config";
+import { useAuthContext } from "../../../context/AuthContext";
 import {useState, useEffect} from "react";
 import {useHistory} from "react-router-dom";
 
-export default function TeacherCardEdit({teacher}) {
+export default function TeamCardEdit({teacher}) {
 
-    const formInitialState = {name: teacher.name, lastName: teacher.lastName, description: teacher.description, course_id: teacher?.course_id};    
+    const formInitialState = {name: teacher.name, lastName: teacher.lastName, description: teacher.description, course_id: teacher.course_id};    
     const [form, handleChange] = useForm(formInitialState);
 
     const { getAuthHeaders } = useAuthContext();
@@ -42,7 +42,7 @@ export default function TeacherCardEdit({teacher}) {
             headers: getAuthHeaders({"Content-type": "application/json"}),
            
         }
-        
+        console.log(teacher.id);
         const response = await fetch(TEACHERS_URL + "/" + teacher.id, options);
         // const data = await response.json();
 

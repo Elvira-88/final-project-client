@@ -7,7 +7,7 @@ import './login.css';
 
 export default function Login() {
 
-    const formInitialState = {username: "elvi@gmail.com", password: "12345678"};
+    const formInitialState = {username: "marti@gmail.com", password: "123"};
     const [form, handleChange] = useForm(formInitialState);
     const {signIn, isAuthenticated, isAdmin, loginUser} = useAuthContext();
     const history = useHistory();

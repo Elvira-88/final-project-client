@@ -1,10 +1,10 @@
-import { useForm } from "../../hooks/useForm";
+import { useForm } from "../../../hooks/useForm";
 import {useState, useEffect} from "react";
-import { TEACHERS_URL } from "../../config/config";
-import { useAuthContext } from "../../context/AuthContext";
+import { TEACHERS_URL } from "../../../config/config";
+import { useAuthContext } from "../../../context/AuthContext";
 import {useHistory} from "react-router-dom";
 
-export default function CourseCardAdd({teacher}) {
+export default function TeamCardAdd({teacher}) {
 
     const formInitialState = {name: "", lastName: "", description: "", course_id: ""};    
     const [form, handleChange] = useForm(formInitialState);
@@ -29,13 +29,7 @@ export default function CourseCardAdd({teacher}) {
         const response = await fetch(TEACHERS_URL, options);
         const data = await response.json();
 
-        if(response.status >= 200 && response.status < 300) {   
-
-            history.push("/admin-teachers")
-         
-        } else {
-            alert("No se pudo añadir");
-        }        
+        
         
         const formImg = new FormData();
         formImg.append("avatar", img);
@@ -46,7 +40,15 @@ export default function CourseCardAdd({teacher}) {
         }
 
         const responseImg = await fetch(`${TEACHERS_URL}/updateimg/${data.id}`, optionsImg);
-        const dataImg = await responseImg;        
+        const dataImg = await responseImg;    
+        
+        if(response.status >= 200 && response.status < 300) {   
+
+            history.push("/admin-teachers")
+        
+        } else {
+            alert("No se pudo añadir");
+        } 
     }
 
     const [courses, setCourses] = useState([]);

@@ -1,6 +1,6 @@
-import { useForm } from "../../hooks/useForm";
-import { COURSES_URL } from "../../config/config";
-import { useAuthContext } from "../../context/AuthContext";
+import { useForm } from "../../../hooks/useForm";
+import { COURSES_URL } from "../../../config/config";
+import { useAuthContext } from "../../../context/AuthContext";
 import {useState, useEffect} from "react";
 import {useHistory} from "react-router-dom";
 

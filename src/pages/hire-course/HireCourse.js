@@ -33,7 +33,7 @@ export default function HireCourse() {
         }
 
         if (!isAuthenticated) {
-            alert("Tienes que tener una cuenta con nosotros para comprar un curso")
+            alert("Accede con tu cuenta para contratar un curso")
             history.push("/login")
         } else {
             const response = await fetch(ENROLLMENTS_URL, options);

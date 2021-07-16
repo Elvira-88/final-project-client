@@ -12,12 +12,12 @@ import Team from "./pages/team/Team";
 import HireCourse from "./pages/hire-course/HireCourse";
 import Admin from "./pages/admin/Admin";
 import AdminRoute from "./pages/admin/AdminRoute";
-import AdminCourses from "./pages/admin/AdminCourses";
-import AdminCourseEdit from  "./pages/admin/AdminCourseEdit";
-import AdminCourseAdd from "./pages/admin/CourseCardAdd";
-import AdminTeachers from "./pages/admin/AdminTeachers";
-import AdminTeacherEdit from "./pages/admin/AdminTeacherEdit";
-import AdminTeacherAdd from "./pages/admin/TeamCardAdd";
+import AdminCourses from "./pages/admin/admincourses/AdminCourses";
+import AdminCourseEdit from  "./pages/admin/admincourses/AdminCourseEdit";
+import AdminCourseAdd from "./pages/admin/admincourses/CourseCardAdd";
+import AdminTeachers from "./pages/admin/adminteachers/AdminTeachers";
+import AdminTeacherEdit from "./pages/admin/adminteachers/AdminTeacherEdit";
+import AdminTeacherAdd from "./pages/admin/adminteachers/TeamCardAdd";
 
 function App() {
   return (
