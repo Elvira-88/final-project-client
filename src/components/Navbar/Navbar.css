@@ -25,3 +25,37 @@
     width: 300px;
     padding: 10px;
 }
+
+@media only screen and (max-width: 920px){
+    #menu_colapsable {
+        display: block;
+    }
+    #menu_completo {
+        display: none;
+    }
+    #logo_menu {
+        display: none;
+    }
+}
+@media only screen and (max-width: 768px){
+    #menu_colapsable {
+        display: block;
+    }
+    #menu_completo {
+        display: none;
+    }
+    #logo_menu {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 920px){
+    #menu_colapsable {
+        display: none;
+    }
+}
+
+.menuMobile{
+    text-align: center;
+    flex: 1;
+}

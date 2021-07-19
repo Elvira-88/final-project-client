@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react";
 import {useParams} from "react-router-dom";
 import CourseCardEdit from "././CourseCardEdit";
+import "./admincourses.css";
 
 export default function AdminCourseEdit() {  
      
@@ -21,7 +22,7 @@ export default function AdminCourseEdit() {
     }, [id])  
 
     return (
-        <div className="courses">          
+        <div className="courseEdit">          
        
         {courses && courses.map(course => {
             return (

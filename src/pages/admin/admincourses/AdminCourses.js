@@ -2,6 +2,7 @@ import {useState, useEffect} from "react";
 import CourseCard from '../../courses/CourseCard';
 import { useAuthContext } from "../../../context/AuthContext";
 import {useHistory} from "react-router-dom";
+import "./admincourses.css";
 
 
 export default function AdminCourses() {
@@ -30,13 +31,17 @@ export default function AdminCourses() {
  
     return (
      
-        <div className="courses">
-            <button onClick={handleAdd}>Añadir curso</button>
-            {courses.map(course => {
-                return (
-                    <CourseCard course={course} /> 
-                )
-            })}             
+        <div className="adminCourses">
+            <div className="buttonAddCourse">
+                <button onClick={handleAdd}>Añadir un curso</button>
+            </div>
+            <div className="adminCourse">
+                {courses.map(course => {
+                    return (
+                        <CourseCard course={course} /> 
+                    )
+                })}  
+            </div>                 
              
         </div>
     )

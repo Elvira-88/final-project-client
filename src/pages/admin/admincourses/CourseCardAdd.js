@@ -45,19 +45,21 @@ export default function CourseCardAdd({}) {
     }, [])
 
     return (
-        <div>
-            <h3>Añadir un nuevo curso</h3>
-            <form onSubmit={handleSubmit}>                         
-                      
-                <div>
-                    <label for="nameInput">Curso</label>
-                    <input onChange={handleChange} value={form.name} name="name"/>
+        <div className="addCourse">
+            <div className="titleCourseAdd"><h2>Añade un nuevo curso</h2></div>
+            <form onSubmit={handleSubmit} className="formAddCourse">                       
+                
+                <div className="addContent">
+                    <div className="labelAddCourse"><label for="nameInput">Curso: </label></div>
+                    <div className="inputAddCourse"><input onChange={handleChange} value={form.name} name="name"/></div>             
+              
                 </div>
-                <div>
-                    <label for="descriptionInput">Descripción</label>
-                    <input onChange={handleChange} value={form.description} name="description"/>
+                <div className="addContent">
+                    <div className="labelAddCourse"><label for="descriptionInput">Descripción: </label></div>
+                    <div className="inputAddCourse"><textarea name="description" cols="30" rows="10" onChange={handleChange} value={form.description}></textarea></div>                
                 </div>
-                <div>
+                <div className="addContent">
+                <div className="labelAddCourse"><label for="nameInput">Profesor: </label></div>
                     <select onChange={handleChange} value={form.teacher_id} name="teacher_id">
                         <option value="">Seleccione un profesor</option>
                         {teachers.map(teacher => {
@@ -67,13 +69,14 @@ export default function CourseCardAdd({}) {
                         })}
                     </select>       
                 </div>
-                <div>
-                    <label for="durationInput">Duración</label>
-                    <input onChange={handleChange} value={form.duration} name="duration"/>
-                </div>
-                <div>
-                    <label for="priceInput">Precio</label>
-                    <input onChange={handleChange} value={form.price} name="price"/>
+                <div className="addContent">
+                    <div className="labelAddCourse"><label for="durationInput">Duración: </label></div>
+                    <div className="inputAddCourse"><input onChange={handleChange} value={form.duration} name="duration"/></div>
+                </div>   
+                    
+                <div className="addContent">
+                    <div className="labelAddCourse"><label for="priceInput">Precio: </label></div>
+                    <div className="inputAddCourse"><input onChange={handleChange} value={form.price} name="price"/></div>
                 </div>   
                 <button>Añadir</button>            
             </form>

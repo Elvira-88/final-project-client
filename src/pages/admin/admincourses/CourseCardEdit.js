@@ -3,6 +3,7 @@ import { COURSES_URL } from "../../../config/config";
 import { useAuthContext } from "../../../context/AuthContext";
 import {useState, useEffect} from "react";
 import {useHistory} from "react-router-dom";
+import "./admincourses.css";
 
 export default function CourseCardEdit({course}) {
 
@@ -72,20 +73,25 @@ export default function CourseCardEdit({course}) {
     
     return (
         
-        <div>
-            <h3>Modificar un curso {form.name}</h3>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label for="nameInput">Curso</label>
-                    <input onChange={handleChange} value={form.name} name="name"/>
+        <div className="editACourse">
+            <div className="titleCourseEdit">
+                <h2>Edita el curso</h2>
+                <h3 className="nameCourseEdit">{form.name}</h3>
+            </div>
+          
+            <form onSubmit={handleSubmit} className="formCourse">
+                <div className="editContent">
+                    <div className="labelEditCourse"><label for="nameInput">Nombre: </label></div>
+                    <div className="inputEditCourse"><input onChange={handleChange} value={form.name} name="name"/></div>                    
                 </div>
-                <div>
-                    <label for="descriptionInput">Descripción</label>
-                    <input onChange={handleChange} value={form.description} name="description"/>
+                <div className="editContent">
+                    <div className="labelEditCourse"><label for="descriptionInput">Descripción: </label></div>
+                    <div className="inputEditCourse"><textarea name="description" cols="30" rows="10" onChange={handleChange} value={form.description}></textarea></div>               
                 </div>
-                <div>              
+                <div className="editContent">  
+                    <div className="labelEditCourse"><label for="nameInput">Profesor: </label></div>            
                     <select onChange={handleChange} value={form.teacher_id} name="teacher_id">
-                    <option value="">Seleccione un profesor</option>
+                    <option value="">Selecciona un profesor</option>
                     {teachers.map(teacher => {
                         return (
                             <option value={teacher.id}>{teacher.name} {teacher.lastName}</option>
@@ -93,13 +99,15 @@ export default function CourseCardEdit({course}) {
                     })}
                     </select>                                 
                 </div>
-                <div>
-                    <label for="durationInput">Duración</label>
-                    <input onChange={handleChange} value={form.duration} name="duration"/>
+                <div className="editContent">
+                    <div className="labelEditCourse"><label for="durationInput">Duración: </label></div>
+                    <div className="inputEditCourse"><input onChange={handleChange} value={form.duration} name="duration"/></div>                    
+                    
                 </div>
-                <div>
-                    <label for="priceInput">Precio</label>
-                    <input onChange={handleChange} value={form.price} name="price"/>
+                <div className="editContent">
+                    <div className="labelEditCourse"><label for="priceInput">Precio: </label></div>
+                    <div className="inputEditCourse"><input onChange={handleChange} value={form.price} name="price"/></div>              
+                
                 </div> 
                 <button>Actualizar el curso</button>  
                 <button onClick={handleDelete}>Eliminar</button>             
