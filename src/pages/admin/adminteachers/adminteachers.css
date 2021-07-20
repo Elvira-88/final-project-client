@@ -13,3 +13,73 @@
    display: flex;
    justify-content: flex-end;
 }
+
+.teacherEdit {
+    background-color: rgb(170, 142, 65);    
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.editATeacher {
+
+}
+
+.titleTeacherEdit, .titleCourseAdd {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formTeacher {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.editContentTeacher {
+    display: flex;
+    flex-direction: row;    
+    flex: 1;
+}
+
+.labelEditTeacher {
+    flex: 2;
+    text-align: start; 
+}
+
+.inputEditTeacher {
+    flex: 3;
+    text-align: start;
+}
+
+.addTeacher {
+    background-color: rgb(170, 142, 65);    
+    padding: 20px;
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+}
+
+.formAddTeacher {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.addContentTeacher {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+.labelAddTeacher {
+    flex: 2;
+    text-align: start;
+}
+
+.inputAddTeacher {
+    flex: 3;
+    text-align: start;
+}
+

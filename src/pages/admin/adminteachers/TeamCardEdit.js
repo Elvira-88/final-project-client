@@ -3,6 +3,7 @@ import { TEACHERS_URL } from "../../../config/config";
 import { useAuthContext } from "../../../context/AuthContext";
 import {useState, useEffect} from "react";
 import {useHistory} from "react-router-dom";
+import "./adminteachers.css";
 
 export default function TeamCardEdit({teacher}) {
 
@@ -67,28 +68,32 @@ export default function TeamCardEdit({teacher}) {
 
 
     return (
-    <div>
-            <h3>Modificación de algún dato de un profesor</h3>
-        <form onSubmit={handleSubmit}>
+    <div className="editATeacher">
+        <div className="titleTeacherEdit">
+            <h3>Modifica los datos del siguiente profesor</h3>
+        </div>
+       
+        <form onSubmit={handleSubmit} className="formTeacher">
             {/* <div>
                 <label for="avatarInput">Foto</label>
                 <input onChange={handleImgUpload} name="avatar" type="file" id="avatar" accept="png jpg jpeg"/>
             </div> */}
-            <div>
-                <label for="nameInput">Nombre</label>
-                <input onChange={handleChange} value={form.name} name="name"/>
+            <div className="editContentTeacher">
+                <div className="labelEditTeacher"><label for="nameInput">Nombre: </label></div>
+                <div className="inputEditTeacher"><input onChange={handleChange} value={form.name} name="name"/></div>                
             </div>
-            <div>
-                <label for="lastNameInput">Apellidos</label>
-                <input onChange={handleChange} value={form.lastName} name="lastName"/>
+            <div className="editContentTeacher">
+                <div className="labelEditTeacher"><label for="lastNameInput">Apellidos: </label></div>
+                <div className="inputEditTeacher"><input onChange={handleChange} value={form.lastName} name="lastName"/></div>
             </div>
-            <div>
-                <label for="descriptionInput">Descripción</label>
-                <input onChange={handleChange} value={form.description} name="description"/>                    
+            <div className="editContentTeacher">
+                <div className="labelEditTeacher"><label for="descriptionInput">Descripción: </label></div>                
+                <div className="inputEditTeacher"><textarea name="description" cols="30" rows="10" onChange={handleChange} value={form.description}></textarea></div>                    
             </div>
-            <div>
+            <div className="editContentTeacher">
+                <div className="labelEditTeacher"><label for="nameInput">Curso: </label></div>
                 <select onChange={handleChange} value={form.course_id} name="course_id">
-                    <option value="">Seleccione un curso</option>
+                    <option value="">Selecciona un curso</option>
                     {courses.map(course => {
                         return (
                             <option value={course.id}>{course.name}</option>

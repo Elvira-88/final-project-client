@@ -22,7 +22,7 @@ export default function AdminTeacherEdit() {
     }, [id])  
 
     return (
-        <div className="teachers">          
+        <div className="teacherEdit">          
        
         {teachers && teachers.map(teacher => {
             return (

@@ -62,26 +62,27 @@ export default function TeamCardAdd({teacher}) {
     }, [])
 
     return (
-        <div>
-            <h3>Añadir un nuevo profesor a nuestro equipo</h3>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label for="avatarInput">Foto</label>
-                    <input onChange={handleImgUpload} name="avatar" type="file" id="avatar" accept="png jpg jpeg"/>
+        <div className="addTeacher">
+            <div className="titleCourseAdd"><h3>Añade un nuevo profesor a nuestro equipo</h3></div>
+            <form onSubmit={handleSubmit} className="formAddTeacher">
+                <div className="addContentTeacher">
+                    <div className="labelAddTeacher"><label for="avatarInput">Foto: </label></div>
+                    <div className="inputAddCourse"><input onChange={handleImgUpload} name="avatar" type="file" id="avatar" accept="png jpg jpeg"/></div>
                 </div>
-                <div>
-                    <label for="nameInput">Nombre</label>
-                    <input onChange={handleChange} value={form.name} name="name"/>
+                <div className="addContentTeacher">
+                    <div className="labelAddTeacher"><label for="nameInput">Nombre</label></div>
+                    <div className="inputAddCourse"><input onChange={handleChange} value={form.name} name="name"/></div>
                 </div>
-                <div>
-                    <label for="lastNameInput">Apellidos</label>
-                    <input onChange={handleChange} value={form.lastName} name="lastName"/>
+                <div className="addContentTeacher">
+                    <div className="labelAddTeacher"><label for="lastNameInput">Apellidos</label></div>
+                    <div className="inputAddCourse"><input onChange={handleChange} value={form.lastName} name="lastName"/></div>
                 </div>
-                <div>
-                    <label for="descriptionInput">Descripción</label>
-                    <input onChange={handleChange} value={form.description} name="description"/>                    
+                <div className="addContentTeacher">
+                    <div className="labelAddTeacher"><label for="descriptionInput">Descripción</label></div>
+                    <div className="inputAddCourse"><input onChange={handleChange} value={form.description} name="description"/></div>                    
                 </div>
-                <div>       
+                <div className="addContentTeacher"> 
+                <div className="labelAddTeacher"><label for="nameInput">Curso: </label></div>      
                     <select onChange={handleChange} value={form.course_id} name="course_id">
                     <option value="">Seleccione un curso</option>
                     {courses.map(course => {
