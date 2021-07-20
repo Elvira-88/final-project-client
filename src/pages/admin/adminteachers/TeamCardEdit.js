@@ -79,19 +79,19 @@ export default function TeamCardEdit({teacher}) {
                 <input onChange={handleImgUpload} name="avatar" type="file" id="avatar" accept="png jpg jpeg"/>
             </div> */}
             <div className="editContentTeacher">
-                <div className="labelEditTeacher"><label for="nameInput">Nombre: </label></div>
+                <div className="labelEditTeacher"><label>Nombre: </label></div>
                 <div className="inputEditTeacher"><input onChange={handleChange} value={form.name} name="name"/></div>                
             </div>
             <div className="editContentTeacher">
-                <div className="labelEditTeacher"><label for="lastNameInput">Apellidos: </label></div>
+                <div className="labelEditTeacher"><label>Apellidos: </label></div>
                 <div className="inputEditTeacher"><input onChange={handleChange} value={form.lastName} name="lastName"/></div>
             </div>
             <div className="editContentTeacher">
-                <div className="labelEditTeacher"><label for="descriptionInput">Descripción: </label></div>                
+                <div className="labelEditTeacher"><label>Descripción: </label></div>                
                 <div className="inputEditTeacher"><textarea name="description" cols="30" rows="10" onChange={handleChange} value={form.description}></textarea></div>                    
             </div>
             <div className="editContentTeacher">
-                <div className="labelEditTeacher"><label for="nameInput">Curso: </label></div>
+                <div className="labelEditTeacher"><label>Curso: </label></div>
                 <select onChange={handleChange} value={form.course_id} name="course_id">
                     <option value="">Selecciona un curso</option>
                     {courses.map(course => {

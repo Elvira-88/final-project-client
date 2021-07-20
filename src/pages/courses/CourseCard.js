@@ -1,5 +1,6 @@
 import {useHistory} from "react-router-dom";
 import {useAuthContext} from "../../context/AuthContext";
+import './courses.css';
 
 export default function CourseCard({course}) {
  
@@ -16,7 +17,7 @@ export default function CourseCard({course}) {
     }
 
     return (
-        <div>
+        <div className="courseCard">
             <h3>{course.name}</h3>
             <h4>{course.description}</h4>
             <h5>{course?.teacher?.name}</h5>

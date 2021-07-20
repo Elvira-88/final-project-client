@@ -81,15 +81,15 @@ export default function CourseCardEdit({course}) {
           
             <form onSubmit={handleSubmit} className="formCourse">
                 <div className="editContent">
-                    <div className="labelEditCourse"><label for="nameInput">Nombre: </label></div>
+                    <div className="labelEditCourse"><label>Nombre: </label></div>
                     <div className="inputEditCourse"><input onChange={handleChange} value={form.name} name="name"/></div>                    
                 </div>
                 <div className="editContent">
-                    <div className="labelEditCourse"><label for="descriptionInput">Descripción: </label></div>
+                    <div className="labelEditCourse"><label>Descripción: </label></div>
                     <div className="inputEditCourse"><textarea name="description" cols="30" rows="10" onChange={handleChange} value={form.description}></textarea></div>               
                 </div>
                 <div className="editContent">  
-                    <div className="labelEditCourse"><label for="nameInput">Profesor: </label></div>            
+                    <div className="labelEditCourse"><label>Profesor: </label></div>            
                     <select onChange={handleChange} value={form.teacher_id} name="teacher_id">
                     <option value="">Selecciona un profesor</option>
                     {teachers.map(teacher => {
@@ -100,12 +100,12 @@ export default function CourseCardEdit({course}) {
                     </select>                                 
                 </div>
                 <div className="editContent">
-                    <div className="labelEditCourse"><label for="durationInput">Duración: </label></div>
+                    <div className="labelEditCourse"><label>Duración: </label></div>
                     <div className="inputEditCourse"><input onChange={handleChange} value={form.duration} name="duration"/></div>                    
                     
                 </div>
                 <div className="editContent">
-                    <div className="labelEditCourse"><label for="priceInput">Precio: </label></div>
+                    <div className="labelEditCourse"><label>Precio: </label></div>
                     <div className="inputEditCourse"><input onChange={handleChange} value={form.price} name="price"/></div>              
                 
                 </div> 

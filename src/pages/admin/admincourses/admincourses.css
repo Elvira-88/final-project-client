@@ -1,12 +1,17 @@
 .adminCourses {
     background-color: rgb(170, 142, 65);    
-    padding: 20px;
+    padding-top: 30px;
     gap: 70px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 50px;
 }
 
 .adminCourse {
-    display: flex;
+    display: grid;
     justify-content: center;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .buttonAddCourse {
@@ -87,6 +92,34 @@
     flex: 3;
     text-align: start;
 }
+
+@media only screen and (max-width: 920px){
+    .adminCourse {
+        display: grid;
+        justify-content: center;
+        grid-gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media only screen and (max-width: 768px){
+    .adminCourse {
+        display: grid;
+        justify-content: center;
+        grid-gap: 20px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media only screen and (min-width: 920px){
+    .adminCourse {
+        display: grid;
+        justify-content: center;
+        grid-gap: 20px;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
 
 
 

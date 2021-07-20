@@ -1,12 +1,16 @@
 .adminTeam {
     background-color: rgb(170, 142, 65);    
-    padding: 20px;
+    padding-right: 30px;
     gap: 70px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .adminTeachers {
-    display: flex;
+    display: grid;
     justify-content: center;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .buttonAddTeacher {
@@ -19,7 +23,9 @@
     padding: 20px;
     display: flex;
     justify-content: center;
+    gap: 20px;
 }
+
 
 .editATeacher {
 
@@ -81,5 +87,31 @@
 .inputAddTeacher {
     flex: 3;
     text-align: start;
+}
+
+@media only screen and (max-width: 920px){
+    .adminTeachers {
+        display: grid;
+        justify-content: center;
+        grid-gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media only screen and (max-width: 768px){
+    .adminTeachers {
+        display: grid;
+        justify-content: center;
+        grid-gap: 20px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media only screen and (min-width: 920px){
+    .adminTeachers {
+        display: grid;
+        justify-content: center;
+        grid-gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 

@@ -1,5 +1,4 @@
 import {useState, useEffect} from "react";
-
 import TeamCard from './TeamCard';
 import './team.css';
 
@@ -18,10 +17,8 @@ export default function Team() {
     return (
         <div className="team">
             {teachers.map((teacher) => {
-                return (
-                    <div className="teachers">
-                        <TeamCard teacher = {teacher}/> 
-                    </div>
+                return (                    
+                        <TeamCard teacher = {teacher}/>                 
                     
                 )
             })}
