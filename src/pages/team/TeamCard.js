@@ -1,5 +1,6 @@
 import {useHistory} from "react-router-dom";
 import {useAuthContext} from "../../context/AuthContext";
+import './team.css';
 
 export default function TeamCard({teacher}) {
 
@@ -14,7 +15,7 @@ export default function TeamCard({teacher}) {
 
     return (
    
-        <div className="TeamCard">
+        <div className="teamCard">
             <img className="imgTeam"src={teacher.avatar} alt=""/>   
             <div className="teacherName">
                 <h4>{teacher.name}</h4>

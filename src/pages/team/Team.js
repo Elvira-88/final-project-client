@@ -19,7 +19,10 @@ export default function Team() {
         <div className="team">
             {teachers.map((teacher) => {
                 return (
-                    <TeamCard teacher = {teacher}/> 
+                    <div className="teachers">
+                        <TeamCard teacher = {teacher}/> 
+                    </div>
+                    
                 )
             })}
                    
