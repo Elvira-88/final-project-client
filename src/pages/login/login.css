@@ -10,9 +10,10 @@
     padding-left: 43%;
     background: url(loginimage.jpg);
     background-size: cover;
+    align-items: center;
+   
   
 }
-
 
 .loginContent {
   

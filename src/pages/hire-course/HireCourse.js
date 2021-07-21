@@ -37,7 +37,7 @@ export default function HireCourse() {
             history.push("/login")
         } else {
             const response = await fetch(ENROLLMENTS_URL, options);
-            const data = await response.json();
+            // const data = await response.json();
             history.push("/courses")
         }    
 

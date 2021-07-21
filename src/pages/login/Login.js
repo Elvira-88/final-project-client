@@ -7,9 +7,9 @@ import './login.css';
 
 export default function Login() {
 
-    const formInitialState = {username: "marti@gmail.com", password: "123"};
+    const formInitialState = {username: "elvi@gmail.com", password: "1234"};
     const [form, handleChange] = useForm(formInitialState);
-    const {signIn, isAuthenticated, isAdmin, loginUser} = useAuthContext();
+    const {signIn, isAuthenticated} = useAuthContext();
     const history = useHistory();
 
     const handleSubmit = async e => {
@@ -40,7 +40,11 @@ export default function Login() {
         } else {
             alert("Login incorrecto");
         }
-    }; 
+    }
+
+    const handlepassword = () => {
+        history.push("/register");
+    };
 
     return isAuthenticated ? <Redirect to="/courses" /> : (
         <div className="login">
@@ -58,8 +62,12 @@ export default function Login() {
                 </div>     
                 <input onChange={handleChange} value={form.password} name="password" className="inputStyle" type="password" placeholder=" *************"/>
             </div>
-            <a className="accessProblems" href="#">¿Olvidaste tu contraseña?</a>
-            <a className="accessProblems" href="#">No estoy registrado</a>
+            <div className="loginContent">
+                <p onClick={handlepassword} className="accessProblems">¿Olvidaste tu contraseña?</p>
+            </div >
+            <div className="loginContent">
+                <p onClick={handlepassword} className="accessProblems">No estoy registrado</p> 
+            </div >
             <div className="loginButton">
                 <button>Acceder</button>                
             </div> 

@@ -27,7 +27,7 @@ export default function Navbar() {
                 <NavLink className="navlink" to="/register">Regístrate</NavLink>             
                 }  
                 {isAuthenticated
-                ? <a onClick={handleSignOut} className="navlink">Cerrar sesión</a>                           
+                ?<p onClick={handleSignOut} className="navlink">Cerrar sesión</p>                           
                 :<NavLink className="navlink" to="/login">Inicia sesión</NavLink> 
                 }
             </div> 
@@ -40,7 +40,7 @@ export default function Navbar() {
                         <NavLink className="navlink" to="/register">Regístrate</NavLink> 
                     }</p>
                     {isAuthenticated
-                    ? <p><a onClick={handleSignOut} className="navlink">Cerrar sesión</a></p>                          
+                    ? <p onClick={handleSignOut} className="navlink">Cerrar sesión</p>                          
                     : <p><NavLink className="navlink" to="/login">Inicia sesión</NavLink></p> 
                     }
                 </Collapsible>

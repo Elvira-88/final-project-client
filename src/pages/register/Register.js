@@ -1,7 +1,7 @@
 import { REGISTER_URL } from "../../config/config";
 import { useForm } from "../../hooks/useForm";
-import { Redirect, useHistory} from "react-router-dom";
-import { useAuthContext } from "../../context/AuthContext";
+import {useHistory} from "react-router-dom";
+
 import './register.css';
 
 export default function Register() {
@@ -21,7 +21,7 @@ export default function Register() {
         }
 
         const response = await fetch(REGISTER_URL, options);
-        const data = await response.json();
+        // const data = await response.json();
         
         if(response.status >= 200 && response.status < 300) {
             
