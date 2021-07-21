@@ -14,56 +14,51 @@ export default function CourseCardEdit({course}) {
 
     const history = useHistory();
      
-    const handleSubmit = async e => {
+    const handleSubmit = async e => {    //Se modifican todos los datos del curso con una petición PUT
         e.preventDefault();
         
         const options = {
             method: "PUT",
-            headers: getAuthHeaders({"Content-type": "application/json"}),
+            headers: getAuthHeaders({"Content-type": "application/json"}),   //Solo se puede editar un curso si tienes el rol Admin
             body: JSON.stringify(form)
         }
-
         
-        const response = await fetch(COURSES_URL + "/" + course.id, options);
-        // const data = await response.json();
-
+        const response = await fetch(COURSES_URL + "/" + course.id, options);    //Llamada al Backend con el id del curso que vamos a editar
         
-        if(response.status >= 200 && response.status < 300) {   
+        if(response.status >= 200 && response.status < 300) {     //Si la respuesta es correcta redirigimos a cursos para comprobar los cambios  
 
             history.push("/admin-courses")
          
         } else {
-            alert("No se pudo guardar");
+            alert("No se pudo guardar");     //Si la respuesta no es correcta nos salta el alert para avisarnos y nos permite volver a editarlo correctamente
         }
-
     }
-
         
-    const handleDelete = async e => {
+    const handleDelete = async e => {     //Petición al backend para eliminar un curso
         e.preventDefault();
         
         const options = {
             method: "DELETE",
-            headers: getAuthHeaders({"Content-type": "application/json"}),
+            headers: getAuthHeaders({"Content-type": "application/json"}),     //Solo para usuarios autorizados con el rol Admin
            
         }
         
-        const response = await fetch(COURSES_URL + "/" + course.id, options);
-        // const data = await response.json();
+        const response = await fetch(COURSES_URL + "/" + course.id, options);      //La petición al Backend se realiza con el id del curso en concreto
+       
 
-        if(response.status >= 200 && response.status < 300) {  
+        if(response.status >= 200 && response.status < 300) {    //Si la respuesta es afirmativa nos elimina el curso y nos redirige a cursos donde comprobaremos que ya no aparece
             
             history.push("/admin-courses")
          
         } else {
-            alert("No se pudo eliminar");
+            alert("No se pudo eliminar");     //Si la respuesta es incorrecta el alert nos informa de que no se pudo eliminar
         }
        
     }
 
     const [teachers, setTeachers] = useState([]);
 
-    const TEACHERS_URL = "http://localhost:8000/api/teachers";
+    const TEACHERS_URL = "http://localhost:8000/api/teachers";     //Petición a la API para obtener todos los profesores de la base de datos para el select del formulario
 
     useEffect(() => {
         fetch(TEACHERS_URL)
@@ -79,7 +74,7 @@ export default function CourseCardEdit({course}) {
                 <h3 className="nameCourseEdit">{form.name}</h3>
             </div>
           
-            <form onSubmit={handleSubmit} className="formCourse">
+            <form onSubmit={handleSubmit} className="formCourse">    {/*Formulario para editar un curso con sus propiedades*/}
                 <div className="editContent">
                     <div className="labelEditCourse"><label>Nombre: </label></div>
                     <div className="inputEditCourse"><input onChange={handleChange} value={form.name} name="name"/></div>                    

@@ -14,11 +14,11 @@ export default function Home() {
                 <div className="textLeft">
                     <h3>¿Qué te proponemos?</h3>
                     <h4>Aprendizaje real</h4>
-                    <p>Enfréntate a casos prácticos en los que aplicarás la materia aprendida y que te permitirán enfrentarte a situaciones que se darán en tu día a día en tu trabajo. Mediante simulación y role playing, aprenderás a resolver problemas y a tomar decisiones empresariales por tí mismo.</p>
+                    <p>Casos prácticos en los que aplicarás la materia aprendida y que te permitirán enfrentarte a situaciones que se darán en tu día a día en tu trabajo. Mediante simulación y role playing, aprenderás a resolver problemas y a tomar decisiones empresariales por tí mismo.</p>
                     <h4>Programas continuamente actualizados</h4>
-                    <p>En una sociedad en la que el conocimiento evoluciona rápidamente, la enseñanza ha de hacerlo al mismo ritmo. Por eso, nuestros programas se actualizan en cada convocatoria, para que el alumno tenga acceso al aprendizaje más innovador, actualice sus conocimientos y se recicle como profesional.</p>
+                    <p>Nuestros programas se actualizan en cada convocatoria, para que el alumno tenga acceso al aprendizaje más innovador, actualice sus conocimientos y se recicle como profesional.</p>
                     <h4>Profesores que son emprendedores de éxito</h4>
-                    <p>Nuestros profesores son profesionales especializados en activo que conocen la realidad de las empresas, el entorno de trabajo y el mercado laboral. Están capacitados para transmitir ese conocimiento y experiencia a sus alumnos.</p>
+                    <p>Profesionales especializados en activo que conocen la realidad de las empresas, el entorno de trabajo y el mercado laboral. Están capacitados para transmitir ese conocimiento y experiencia a sus alumnos.</p>
                 </div> 
                 <div className="principalImg">
                     <img src="https://srvsbniisphp-universitatpolit.netdna-ssl.com/cdn_propintegral/sites/default/files/styles/ancho680px/public/noticia/66106/field_foto/gettyimages-1181607218.jpg" alt="Foto"/>
@@ -29,12 +29,9 @@ export default function Home() {
                     <p>Aprenderás a responder preguntas que nunca nadie antes se había planteado. Además de competencias trabajamos tu Creatividad, tu Pensamiento Crítico, tu Capacidad para resolver Problemas y la Colaboración. Te formamos en las competencias y habilidades más innovadoras.</p>
                     <h4 className="learning">“El alumno está en el centro del aprendizaje”</h4>
                     <p>Nuestro objetivo es ofrecerte una experiencia única de aprendizaje, adaptada a tus necesidades. Cuéntanos tu caso, nosotros nos encargaremos de analizarlo y plantearemos el desarrollo del aprendizaje en función de lo que más te convenga.</p>
-                    <p>Nuestra metodología es disruptiva: aprendizaje por proyectos, trabajo en equipo y seguimiento de mentores. Aceleramos la transferencia tecnológica y el conocimiento digital. Facilitamos la acumulación y la transferencia del conocimiento en la empresa.</p>
                 </div>  
             </div>            
-            <div className="textDown">
-                <p className="paragraph">Texto abajo</p>
-            </div>                   
+                            
             
         </div>
         
